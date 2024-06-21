@@ -10,14 +10,60 @@ height: 5vw;
 background-color: #000000;
 }
 #fondo{
-    border: solid 2px red;
+    border: solid 2px blue;
 }
-.bgPersonalized{
+/* .bgPersonalized{
     background-color: #e1dacd;
-    border: solid 2px #c2c1bf;
-    height: 13vw;
+    height: 15vw;
+    width: 30vw;
 }
-/* footer{
-    height: 5vw;
-    background-color: #000000;  
+.bgPersonalized img{
+    width: 80%;
+    object-fit: cover;   
+}
+.fondo2{
+    display: flex;
+    text-align: center;
+    border: solid 2px red;
+    height: 4vw;
+    width: 100%;
+
 } */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card:active {
+    transform: scale(0.95);
+}
+
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.bgPersonalized {
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+}
+
+.fondo2 {
+    background: #f8f9fa;
+}
+
+ 
