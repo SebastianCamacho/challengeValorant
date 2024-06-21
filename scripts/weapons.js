@@ -20,21 +20,22 @@ const app = createApp({
                 .then(data => {
                     this.weapons = data.data
                     this.weaponsBk = data.data
-                    this.categories = Array.from(new Set(this.weapons.map((weapon) => weapon.category)))
+                    this.categories = Array.from(new Set(this.weapons.map((weapon) => this.extractCategoryName(weapon.category))))
                     console.log(this.weapons);
                     console.log(this.categories);
-
                 })
+        },
+        extractCategoryName(category) {
+            return category.split('::')[1] || category;
         }
     },
     computed: {
         megaFilter() {
             let textFilter = this.weaponsBk.filter(weapon => weapon.displayName.toLowerCase().includes(this.searchText.toLowerCase()))
             if (this.selectedCategories.length > 0) {
-                this.weapons = textFilter.filter(weapon => this.selectedCategories.includes(weapon.category))
+                this.weapons = textFilter.filter(weapon => this.selectedCategories.includes(this.extractCategoryName(weapon.category)))
             } else {
                 this.weapons = textFilter
-
             }
         }
     }

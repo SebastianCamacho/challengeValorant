@@ -21,13 +21,13 @@
         <br>
         <div class="input-group mb-3 p-3">
             {{megaFilter}}
-            <button type="button" class="btn btn-outline-secondary">categories</button>
+            <button type="button" class="btn btn-outline-secondary"><h5>Categories</h5></button>
             <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
             <div>
                <ul  class="dropdown-menu">
-              <li v-for="categorie in categories"><a class="dropdown-item"><input v-model="selectedCategories" type="checkbox" :value="categorie">{{categorie}}</a></li>
+              <li v-for="categorie in categories"><a class="dropdown-item"><input v-model="selectedCategories" type="checkbox" :value="categorie"> {{categorie}}</a></li>
               <br>
             </ul> 
             </div>
@@ -39,8 +39,8 @@
 
 
         <div id="fondo" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 m-3">
-            <div v-if="weapons.length == 0">
-                <h2>no heapons find</h2>
+            <div v-if="weapons.length == 0" id="textFound">
+                <h2>NO Weapons find</h2>
             </div>
             <div id="fondoV" v-for="weapon in weapons" class="col">
                 <div class="card h-100 text-center bgPersonalized">
