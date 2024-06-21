@@ -1,32 +1,43 @@
 let urlApi = "https://valorant-api.com/v1/weapons"
-const {createApp} = Vue
+const { createApp } = Vue
 const app = createApp({
-    data(){
-        return{
-            armas:[],
-            categorias:[],
-            textoBuscar:"",
-            categoriasSeleccionadas:[]
+    data() {
+        return {
+            weapons: [],
+            weaponsBk: [],
+            categories: [],
+            searchText: "",
+            selectedCategories: []
         }
     },
-    created(){
+    created() {
         this.traerData(urlApi)
     },
-    methods:{
-        traerData(url){
+    methods: {
+        traerData(url) {
             fetch(url)
-            .then(response => response.json())
-            .then(data => {
-            this.armas = data.data              
-            console.log(this.armas);
-            
-            })
+                .then(response => response.json())
+                .then(data => {
+                    this.weapons = data.data
+                    this.weaponsBk = data.data
+                    this.categories = Array.from(new Set(this.weapons.map((weapon) => weapon.category)))
+                    console.log(this.weapons);
+                    console.log(this.categories);
+
+                })
         }
     },
-    computed:{
+    computed: {
+        megaFilter() {
+            let textFilter = this.weaponsBk.filter(weapon => weapon.displayName.toLowerCase().includes(this.searchText.toLowerCase()))
+            if (this.selectedCategories.length > 0) {
+                this.weapons = textFilter.filter(weapon => this.selectedCategories.includes(weapon.category))
+            } else {
+                this.weapons = textFilter
 
+            }
+        }
     }
 
 }).mount('#appWeapons')
 
-    

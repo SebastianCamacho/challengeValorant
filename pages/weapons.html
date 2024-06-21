@@ -15,12 +15,38 @@
 
     </header>
     <main id="appWeapons">
+
+
+
+        <br>
+        <div class="input-group mb-3 p-3">
+            {{megaFilter}}
+            <button type="button" class="btn btn-outline-secondary">categories</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <div>
+               <ul  class="dropdown-menu">
+              <li v-for="categorie in categories"><a class="dropdown-item"><input v-model="selectedCategories" type="checkbox" :value="categorie">{{categorie}}</a></li>
+              <br>
+            </ul> 
+            </div>
+            
+            <input v-model="searchText" type="search" class="form-control" aria-label="Text input with segmented dropdown button">
+          </div>
+
+
+
+
         <div id="fondo" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 m-3">
-            <div id="fondoV" v-for="arma in armas" class="col">
+            <div v-if="weapons.length == 0">
+                <h2>no heapons find</h2>
+            </div>
+            <div id="fondoV" v-for="weapon in weapons" class="col">
                 <div class="card h-100 text-center bgPersonalized">
-                    <img :src="arma.displayIcon" class="card-img-top mt-5" alt="...">
+                    <img :src="weapon.displayIcon" class="card-img-top mt-5" alt="...">
                     <div class=" fondo2">
-                        <a href="./details.html" class="btn card-title">{{ arma.displayName }}</a>
+                        <a href="./details.html" class="btn card-title">{{weapon.displayName}}</a>
                     </div>
                 </div>
             </div>
