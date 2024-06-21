@@ -16,11 +16,11 @@
     </header>
     <main id="appWeapons">
         <div id="fondo" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 m-3">
-            <div v-for="arma in armas" class="col">
+            <div id="fondoV" v-for="arma in armas" class="col">
                 <div class="card h-100 text-center bgPersonalized">
-                    <img :src="arma.displayIcon" class="card-img-top mt-2" alt="...">
-                    <div class="card-body fondo2">
-                        <h2 class="card-title">{{ arma.displayName }}</h2>
+                    <img :src="arma.displayIcon" class="card-img-top mt-5" alt="...">
+                    <div class=" fondo2">
+                        <a href="./details.html" class="btn card-title">{{ arma.displayName }}</a>
                     </div>
                 </div>
             </div>

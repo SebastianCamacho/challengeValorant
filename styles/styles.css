@@ -10,7 +10,13 @@ height: 5vw;
 background-color: #000000;
 }
 #fondo{
-    border: solid 2px blue;
+    /* border: solid 2px blue; */
+}
+#fondoV{
+    /* border: solid 2px gold; */
+
+
+    /* height: 25vw; */
 }
 /* .bgPersonalized{
     background-color: #e1dacd;
@@ -51,6 +57,7 @@ background-color: #000000;
     border-top-right-radius: 15px;
     max-height: 200px;
     object-fit: cover;
+    /* border: 2px blue solid; */
 }
 
 .card-title {
@@ -60,10 +67,17 @@ background-color: #000000;
 
 .bgPersonalized {
     background: linear-gradient(135deg, #ece9e6, #ffffff);
+    display: flex;
+    justify-content: space-between;
+    /* border: solid 2px red; */
 }
 
 .fondo2 {
     background: #f8f9fa;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    /* border: solid 4px green; */
 }
 
  
