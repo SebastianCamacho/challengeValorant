@@ -34,13 +34,14 @@
         </nav>
     </header>
     <main id="app">
+      {{filterSearch}}
         <div>
-            {{filterSearch}}
-            <form>
-                <div class="d-flex justify-content-end" role="search">
+          <!-- {{filterSearch}} -->
+          <form>
+              <div class="d-flex justify-content-end" role="search">
                   <input v-model="searchText" class="form-control me-2 m-2" type="search" placeholder="Search" aria-label="Search" id="search">
-                </div>
-            </form>
+              </div>
+          </form>
         </div>
         <div id="maps" class="row m-3 justify-content-evenly">
           <div id="map" v-for="map in maps" class="card col-6 col-md-3 p-3 m-3">

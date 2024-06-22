@@ -9,7 +9,6 @@ const app = createApp({
             maps:[],
             mapsBK:[],
             searchText:""
-
         }
     },
 
@@ -29,7 +28,7 @@ const app = createApp({
 
     computed:{
         filterSearch() {
-            let filterText = this.mapsBK.filter(map => map.displayName.toLowerCase().includes(searchText.toLowerCase()))
+            let filterText = this.mapsBK.filter(map => map.displayName.toLowerCase().includes(this.searchText.toLowerCase()))
             this.maps = filterText
             console.log(this.maps);
         }
