@@ -8,7 +8,8 @@ const app = createApp({
         return{
             maps:[],
             mapsBK:[],
-            searchText:""
+            searchText:"",
+            favorites:[]
         }
     },
 
@@ -23,6 +24,17 @@ const app = createApp({
                 this.mapsBK = data.data
                 console.log(this.maps);
             })
+        },
+
+        addToFavorites(map) {
+            const index = this.favorites.findIndex(fav => fav.uuid === map.uuid);
+            if (index !== -1) {
+                this.favorites.splice(index, 1);
+                console.log(this.favorites);
+            }else {
+                this.favorites.push(map);
+                console.log(this.favorites);
+            }
         }
     },
 

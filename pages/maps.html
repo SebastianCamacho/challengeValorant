@@ -40,7 +40,10 @@
           <form>
               <div class="d-flex justify-content-end" role="search">
                   <input v-model="searchText" class="form-control me-2 m-2" type="search" placeholder="Search" aria-label="Search" id="search">
-              </div>
+                  <button type="button" class="btn m-2" data-bs-toggle="modal" data-bs-target="#modalFavorites">
+                    Favorites
+                  </button>
+                </div>
           </form>
         </div>
         <div id="maps" class="row m-3 justify-content-evenly">
@@ -51,15 +54,49 @@
                 <!-- <p class="card-text">${array[i].description}</p> -->
             </div>
             <div class="card-body">
-                <a style="color: #F44336" href="#" class="btn">Add to favorites</a>
-                <a style="color: #F44336" :href="'details.html?value='+map.uuid" class="btn">Details</a>
+              <a v-if="favorites.find(fav => fav.uuid === map.uuid)" @click="addToFavorites(map)" style="color: #F44336" href="#" class="btn">Remove from favorites</a>
+              <a v-else @click="addToFavorites(map)" style="color: #F44336" href="#" class="btn">Add to favorites</a>
+              <a style="color: #F44336" :href="'details.html?value='+map.uuid" class="btn">Details</a>
             </div>
           </div>
         </div>
+    
+        <div class="modal fade" id="modalFavorites" tabindex="-1" aria-labelledby="modalFavoritesLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="modalFavoritesLabel">Mapas Favoritos</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="row justify-content-evenly">
+                          <div class="col-12">
+                              <div class="row">
+                                  <div v-for="map in favorites" :key="map.uuid" class="card col-6 col-md-3 p-3 m-3">
+                                      <img :src="map.displayIcon" class="card-img-top p-2" alt="map">
+                                      <div class="card-body">
+                                          <h5 style="color: #F44336" class="card-title">{{ map.displayName }}</h5>
+                                      </div>
+                                      <div class="card-body">
+                                          <a style="color: #F44336" :href="'details.html?value=' + map.uuid" class="btn">Details</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
     </main>
     <footer>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../scripts/maps.js"></script>
     
