@@ -161,7 +161,7 @@ footer a{
 /* Background  */
 
 .bg_color_valorant{
-    background-color: #db4338e1;
+    background-color: #FF4655;
 }
 
 .bg_black_transparent_8{
@@ -174,12 +174,6 @@ footer a{
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-}
-
-/* barra nav */
-
-.nav-link:hover, .dropdown-item:hover{
-    color: #FF0000;
 }
 
 /*Page InfoHtml*/
