@@ -1,3 +1,6 @@
+//consumo de datos API
+const urlEventos = "https://aulamindhub.github.io/amazing-api/events.json"
+
 //url de la pagina actual
 let urlDetails = window.location.href
 
