@@ -147,3 +147,42 @@ footer a{
 }
 
 
+
+/*---------------------- GENRALS STYLES MY BOOK JHEESFRI-------------------*/
+
+/* Fuentes/Estilos De Letras*/
+.f_f_times{
+    font-family:'Times New Roman', Times, serif ;
+}
+.f_f_arial{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Background  */
+
+.bg_color_valorant{
+    background-color: #FF4655;
+}
+
+.bg_black_transparent_8{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bg_valorant{
+    background-image: url('https://fondosmil.co/fondo/54287.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+/*Page InfoHtml*/
+
+.descriptionGeneral{
+    width: 70%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
+
