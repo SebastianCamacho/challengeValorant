@@ -211,9 +211,11 @@ transform: scale(1.5);
         
          <div v-if="agents.length === 0">
             <h5  class="alert alert-primary" role="alert">"There are no agents related to your search."</h5> 
+
             
         </div>
-          <div v-for="event in agents" id="card" class="card bg-dark"  >
+        
+          <div v-for="event in agents" :key="event.uuid"  id="card" class="card bg-dark"  >
             <img class="card-img-top alternativeImag" :src="event.background" alt="" height="250vh" width="45vh">
             <a :href="'./detailsAgents.html?value='+event.uuid">
                 <img :src="event.fullPortrait"   class="card-img-top" alt="..." height="250vh" width="45vh" >
