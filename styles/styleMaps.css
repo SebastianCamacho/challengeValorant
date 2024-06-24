@@ -1,4 +1,56 @@
-#map{
-    background-color: #FF4655;
+.map{
+    background: radial-gradient(circle,   #00ff22, #212529);          
 }
 
+#imgMap:hover{
+    transform: scale(1.5);
+}
+
+#map:hover {
+    transform: scale(1.2);
+}
+
+.lista{
+    display: flex;
+    justify-content: space-between;
+    background-color: #212529;
+    color: #ffffff;
+}
+
+a{
+    padding-right: 1.5vh;
+}
+
+main{
+    padding:5vh 5vh ;
+}
+
+.star:hover, .star-filled:hover{
+transform: scale(1.5);
+}
+
+.star {
+  fill: gray;
+  cursor: pointer;
+}
+
+.star-filled {
+  fill: gold;
+}
+
+.star:hover, .star-filled:hover{
+    transform: scale(1.5);
+}
+.video{
+    /* fixed o absolute */
+   position: fixed; 
+   right: 0;
+   bottom: 0;
+   height: auto;
+    z-index: -1;
+   
+}
+
+#modalBody{
+    background-color: #212529;
+}

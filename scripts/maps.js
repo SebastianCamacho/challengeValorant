@@ -9,12 +9,17 @@ const app = createApp({
             maps:[],
             mapsBK:[],
             searchText:"",
-            favorites:[]
+            favoriteMaps:[]
         }
     },
 
     created(){
         this.bringData(url)
+        const localFavoriteMaps = localStorage.getItem('favoriteMaps')
+        if (localFavoriteMaps){
+            this.favoriteMaps = JSON.parse(localFavoriteMaps)
+            this.cleanFavorites()
+        }
     },
 
     methods:{
@@ -27,14 +32,24 @@ const app = createApp({
         },
 
         addToFavorites(map) {
-            const index = this.favorites.findIndex(fav => fav.uuid === map.uuid);
+            const index = this.favoriteMaps.findIndex(fav => fav.uuid === map.uuid);
             if (index !== -1) {
-                this.favorites.splice(index, 1);
-                console.log(this.favorites);
+                this.favoriteMaps.splice(index, 1);
+                console.log(this.favoriteMaps);
+                this.updateLocalStore()
             }else {
-                this.favorites.push(map);
-                console.log(this.favorites);
+                this.favoriteMaps.push(map);
+                console.log(this.favoriteMaps);
+                this.updateLocalStore()
             }
+        },
+
+        updateLocalStore(){
+            localStorage.setItem('favoriteMaps', JSON.stringify(this.favoriteMaps))
+        },
+
+        cleanFavorites(){
+            this.favoriteMaps = this.favoriteMaps.filter(favorite => favorite !== null)
         }
     },
 
