@@ -1,23 +1,193 @@
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: #263238;
+#main {
+    font-family: 'Karantina', sans-serif;
 }
-header{
-height: 5vw;
-background-color: #000000;
+
+/* NAVBAR */
+.nav-link, .dropdown-item{
+    color: white;
 }
-#fondo{
-    /* border: solid 2px blue; */
+
+.nav-link:hover, .dropdown-item:hover{
+    color: #FF0000;
 }
-#fondoV{
-    /* border: solid 2px gold; */
+
+.seccionAgentes{
+    background-color: #FF4655;
+}
 
 
-    /* height: 25vw; */
+/* ABANICO DE IMAGENES */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
 }
+
+.image-card {
+    flex: 1;
+    transition: flex 0.3s ease, z-index 0.3s ease;
+    margin: 0 1%;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+/* Tamaños proporcionales */
+.image-card:nth-child(1) {
+    flex: 1.2; /* Más pequeño */
+    left: 10%;
+    z-index: 1;
+
+}
+.image-card:nth-child(2) {
+    flex: 1.5; /* Mediano */
+    left: 5%;
+    z-index: 2;
+
+}
+.image-card:nth-child(3) {
+    flex: 1.7; /* Más grande */
+    z-index: 3;
+}
+.image-card:nth-child(4) {
+    flex: 1.5; /* Mediano */
+    right: 5%;
+    z-index: 2;
+
+}
+.image-card:nth-child(5) {
+    flex: 1.2; /* Más pequeño */
+    right: 10%;
+    z-index: 1;
+
+}
+
+/* Efecto hover */
+.image-card:hover {
+    flex: 3; /* Se expande más */
+    z-index: 4;
+}
+
+.image-card:hover img {
+    filter: brightness(1.2);
+}
+
+
+
+
+.h2{
+    font-size: 8vw;
+}
+.boton1{
+    background: linear-gradient(45deg, #FF3844, #FF7562);
+    font-size: 4vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.boton1:hover {
+    background: linear-gradient(45deg, #ff4e4e, #FF7562);
+    transform: scale(1.1);
+}
+
+.seccionMapas img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+footer a{
+    padding-right: 1.5vh;
+}
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .image-container {
+        height: 40vh;
+        margin-bottom: 5vh;
+    }
+    .image-card {
+        margin: 0 0.5%;
+    }
+    .boton1{
+        font-size: 6vw;
+    }
+    .h2{
+        font-size:11vh;
+    }
+    
+}
+
+
+@media (max-width: 480px) {
+    .image-container {
+        height: 30vh;
+    }
+    .image-card {
+        margin: 0 0.5%;
+        
+    }
+    .boton1{
+        font-size: 7vw;
+    }
+    .h2{
+        font-size:8vh;
+    }
+}
+
+
+
+/*---------------------- GENRALS STYLES MY BOOK JHEESFRI-------------------*/
+
+/* Fuentes/Estilos De Letras*/
+.f_f_times{
+    font-family:'Times New Roman', Times, serif ;
+}
+.f_f_arial{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Background  */
+
+.bg_color_valorant{
+    background-color: #FF4655;
+}
+
+.bg_black_transparent_8{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bg_valorant{
+    background-image: url('https://fondosmil.co/fondo/54287.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+/*Page InfoHtml*/
+
+.descriptionGeneral{
+    width: 70%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
 /* .bgPersonalized{
     background-color: #e1dacd;
     height: 15vw;
