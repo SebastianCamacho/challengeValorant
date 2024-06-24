@@ -65,42 +65,43 @@
           </div>
         </nav>
       </header>
-      <main id="appWeapons">
-        <div class="input-group mb-3 p-4 custom-input-group">
-            {{megaFilter}}
-            <button type="button" class="btn btn-outline-secondary"><h5>Categories</h5></button>
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <div>
-                <ul class="dropdown-menu">
-                    <li v-for="categorie in categories">
-                        <a class="dropdown-item">
-                            <input v-model="selectedCategories" type="checkbox" :value="categorie"> {{categorie}}
-                        </a>
-                    </li>
-                    <br>
-                </ul>
-            </div>
-            <input id="inputWeaponBg" v-model="searchText" type="search" class="form-control" aria-label="Text input with segmented dropdown button">
+<main id="appWeapons">
+    <div class="input-group mb-3 p-4 custom-input-group">
+        {{megaFilter}}
+        <button type="button" class="btn btn-outline-secondary"><h5>Categories</h5></button>
+        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <div>
+            <ul class="dropdown-menu">
+                <li v-for="categorie in categories">
+                    <a class="dropdown-item">
+                        <input v-model="selectedCategories" type="checkbox" :value="categorie"> {{categorie}}
+                    </a>
+                </li>
+                <br>
+            </ul>
         </div>
-    
-        <div id="fondo" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 m-3 custom-fondo">
-            <div v-if="weapons.length == 0" id="textFound" class="custom-text-found">
-                <h2>NO Weapons found</h2>
-            </div>
-            <div v-for="weapon in weapons" class="col custom-card-container">
-                <div class="card h-100 text-center custom-card">
-                    <div class="custom-card-img-container">
-                        <a href="/pages/details.html"> <img :src="weapon.displayIcon" class="card-img-top mt-5 custom-card-img" alt=""></a>
-                    </div>
-                    <div class="custom-card-footer">
-                        <a href="./details.html" class="btn custom-btn">{{weapon.displayName}}</a>
-                    </div>
+        <input id="inputWeaponBg" v-model="searchText" type="search" class="form-control" aria-label="Text input with segmented dropdown button">
+    </div>
+
+    <div id="fondo" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 m-3 custom-fondo">
+        <div v-if="weapons.length == 0" id="textFound" class="custom-text-found">
+            <h2>NO Weapons found</h2>
+        </div>
+        <div v-for="weapon in weapons" class="col custom-card-container">
+            <div class="card h-100 text-center custom-card">
+                <div class="custom-card-img-container">
+                    <a href="/pages/details.html"> <img :src="weapon.displayIcon" class="card-img-top mt-5 custom-card-img" alt=""></a>
+                </div>
+                <div class="custom-card-footer">
+                    <a href="./details.html" class="btn custom-btn">{{weapon.displayName}}</a>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
+
     
     
     <footer >
