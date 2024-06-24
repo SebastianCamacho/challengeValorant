@@ -21,6 +21,7 @@ const app= createApp({
     created(){
         this.traerData(urlAgents).then(()=>{
             this.checkForAgentDetail()
+            console.log('Agents after fetch:', this.agents);
         })
         const localFavorites= localStorage.getItem('favorites')
         if (localFavorites){
@@ -49,8 +50,9 @@ const app= createApp({
             return new Promise((resolve, reject)=>{
                 fetch(url).then(response=> response.json()).then(data=>{
 
-                    this.agents=data.data
-                    this.allAgents=data.data
+                    this.agents=data.data.filter(agent=>agent.isPlayableCharacter && agent.background && agent.fullPortrait);
+                    this.allAgents=this.agents;
+                    console.log('Filtered agents:', this.agents);
                     // Filtra los agentes que tienen roles válidos y luego extrae los displayName únicos
                     const rolesWithDisplayName = this.agents
                     .filter(agent => agent.role && agent.role.displayName) // Filtrar agentes con roles válidos
