@@ -363,6 +363,53 @@ footer a{
     object-fit: cover;
 }
 
+/* Estilos de mapas */
 
+.map{
+    background: radial-gradient(circle,   #00ff22, #212529);          
+}
+
+#mapsBody{
+    background-color: #1A242E;
+}
+
+#imgMap:hover{
+    transform: scale(1.5);
+}
+
+#map:hover {
+    transform: scale(1.2);
+}
+
+.star:hover, .star-filled:hover{
+transform: scale(1.5);
+}
+
+.star {
+  fill: gray;
+  cursor: pointer;
+}
+
+.star-filled {
+  fill: gold;
+}
+
+.star:hover, .star-filled:hover{
+    transform: scale(1.5);
+}
+
+.video{
+    /* fixed o absolute */
+   position: fixed; 
+   right: 0;
+   bottom: 0;
+   height: auto;
+    z-index: -1;
+   
+}
+
+#modalBody{
+    background-color: #212529;
+}
 
  
