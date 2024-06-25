@@ -399,11 +399,15 @@ footer a {
 }
 
 #imgMap:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 #map:hover {
     transform: scale(1.2);
+}
+
+#imgMapDetail{
+    width: 35vw;
 }
 
 .star:hover, .star-filled:hover{
@@ -437,7 +441,8 @@ transform: scale(1.5);
     background-color: #212529;
 }
 
- 
+
+
 
 .footerS:hover {
     transform: scale(1);
@@ -468,3 +473,4 @@ transform: scale(1.5);
     font-size: 2vw;
 
 }
+ 
