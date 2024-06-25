@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
-<body id="bodyInfoHtml">
+<body id="bodyInfoHtml" class="bg_valorant">
     <header>
         <nav class="navbar navbar-expand-sm bg-dark">
             <div class="container-fluid justify-content-between">
@@ -54,15 +54,23 @@
         </nav>
     </header>
     <main id="infoHtml">
-        <div class="bg_valorant">
-            <div class="bg_black_transparent_8">
-                <div v-for="section in valorant" class="d-flex flex-column align-items-center">
-                    <h2 class="f_f_times text-light py-3">{{section.section}}</h2>
-
-                    <p class="descriptionGeneral text-light fs-5 text-center">{{section.content}}</p>
+        <div>
+            <div class="bg_valorant py-5 d-flex justify-content-evenly flex-wrap ">
+                <div v-for="(section, index) in valorant" class="d-flex" style="width: 40vw;">
+                    <div class="fatherInfo card mb-3 d-flex bg_black_transparent_1 my-3">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <img v-if="section.section == 'Agents'" v-for="agent in apiValorant"
+                                :src="agent.displayIcon" alt="" style="width: 4rem;" class="card-img-bottom m-2">
+                            <img v-if="section.section != 'Agents'" :src="section.image"
+                                class="card-img-bottom object-fit-contain m-4" alt="">
+                        </div>
+                        <div class="card-body bg_black_transparent_8">
+                            <h5 class="card-title col_white text-center">{{section.section}}</h5>
+                            <p class="card-text col_white">{{section.content}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
 
     </main>
