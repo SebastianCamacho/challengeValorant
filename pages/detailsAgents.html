@@ -53,7 +53,7 @@
 } */
  
  .h-100, .card-back{
-    background-color: #DC3545;
+    background-color: #1A242E;
    
     cursor: pointer;
   
@@ -252,11 +252,11 @@
                 <h2 style="padding: 2vh 0; text-align: center;">SPECIAL ABILITIES</h2>
                 <div class="row row-cols-4 row-cols-md-4 g-4" style="display: flex; justify-content: space-around;">
                   <div class="col" v-for="(ability, index) in agentDetail.abilities" :key="index" style="width: 40vh;">
-                    <div class="card h-100 border-danger" :class="{ active: selectAbilityIndex === index }" @click="toggleCard(index)">
+                    <div class="card h-100 " :class="{ active: selectAbilityIndex === index }" @click="toggleCard(index)">
                       <div class="card-front">
                         <img :src="ability.displayIcon" class="card-img-top" alt="...">
                       </div>
-                      <div class="card-back" v-if="selectAbilityIndex === index">
+                      <div class="card-back text-light " v-if="selectAbilityIndex === index">
                         <h3>{{ ability.displayName }}</h3>
                         <p>{{ ability.description }}</p>
                       </div>
