@@ -13,7 +13,7 @@ const app= createApp({
             roleSelect:[],
             favorites:[],
             agentDetail:{abilities: []},
-            selectAbilityIndex:0,
+            selectAbilityIndex:null,
             imageLoaded: false,
             imageClicked: false
         }
@@ -117,8 +117,12 @@ const app= createApp({
             console.log('Agent found:', this.agentDetail);
         }
     },
-    selectAbility(index){
-        this.selectAbilityIndex=index
+    toggleCard(index){
+        if(this.selectAbilityIndex===index){
+            this.selectAbilityIndex=null;
+        } else {
+            this.selectAbilityIndex=index;
+        }
     }
 },
 
@@ -133,10 +137,10 @@ computed:{
         } else {
             this.agents= filterText
         }           
-    },
+    }/* ,
     selectedAbility(){
         return this.agentDetail && this.agentDetail.abilities.length > 0 ? this.agentDetail.abilities[this.selectAbilityIndex] : {};
-    }
+    } */
 }
 
 
