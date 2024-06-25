@@ -23,7 +23,8 @@ const app2 = createApp({
             bestBodyDamage:[],
             bestRange:[],
             lowerCost:[],
-            higherCost:[]
+            higherCost:[],
+            Tops:[]
 
         }
     },
@@ -39,6 +40,8 @@ const app2 = createApp({
                 this.range();
                 this.calculateLowerCost();
                 this.calculateHigherCost();
+                console.log(this.Tops);
+                this.extrarRangos();
             });
         } catch (error) {
             console.error('Error in created hook:', error);
@@ -52,13 +55,13 @@ const app2 = createApp({
                 const data = await response.json();
                 this.weapons = data.data;
                 this.weaponsBK = data.data;
-                console.log(this.weaponsBK);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         },
 
         fastReload(){
+            
             this.fastestArray = this.weaponsBK.sort((a, b) => {
                 if (a.weaponStats && b.weaponStats && typeof a.weaponStats.reloadTimeSeconds === 'number' && typeof b.weaponStats.reloadTimeSeconds === 'number') {
                     return a.weaponStats.reloadTimeSeconds - b.weaponStats.reloadTimeSeconds;
@@ -66,40 +69,46 @@ const app2 = createApp({
                     return 0
                 }
             });
-            console.log(this.fastestArray);
             this.topFast = this.fastestArray.slice(0, 3)
-            console.log(this.topFast);
+            let objetoTop3={};
+            objetoTop3.name="Most Fast Reload"
+            objetoTop3.top=[...this.topFast]
+            this.Tops.push(objetoTop3);
             return this.topFast
         },
 
         bestEquipTime(){
             this.bestEquipArray = this.weaponsBK.sort((a, b) => {
                 if (a.weaponStats && b.weaponStats && typeof a.weaponStats.equipTimeSeconds === 'number' && typeof b.weaponStats.equipTimeSeconds === 'number') {
-                    return b.weaponStats.equipTimeSeconds - a.weaponStats.equipTimeSeconds;
+                    return a.weaponStats.equipTimeSeconds - b.weaponStats.equipTimeSeconds;
                 } else {
                     return 0
                 }
             });
             this.topEquip = this.bestEquipArray.slice(0, 3)
-            console.log(this.bestEquipArray);
-            console.log(this.topEquip);
+            let objetoTop3={};
+            objetoTop3.name="Faster equipment time"
+            objetoTop3.top=[...this.topEquip]
+            this.Tops.push(objetoTop3);
             return this.topEquip
         },
 
         fireRate(){
             this.fireRateArray = this.weaponsBK.sort((a, b) => {
                 if (a.weaponStats && b.weaponStats && typeof a.weaponStats.fireRate === 'number' && typeof b.weaponStats.fireRate === 'number') {
-                    return a.weaponStats.fireRate - b.weaponStats.fireRate;
+                    return b.weaponStats.fireRate - a.weaponStats.fireRate;
                 } else {
                     return 0
                 }
             });
             this.topFireRate = this.fireRateArray.slice(0, 3)
-            console.log(this.fireRateArray);
-            console.log(this.topFireRate);
+            let objetoTop3={};
+            objetoTop3.name="Best Fire Rate"
+            objetoTop3.top=[...this.topFireRate]
+            this.Tops.push(objetoTop3);
             return this.topFireRate
         },
-
+        // no usada
         headDamage(){
             this.headDamageArray = this.weaponsBK.sort((a, b) => {
                 if (a.weaponStats && b.weaponStats && typeof a.weaponStats.damageRanges.headDamage === 'number' && typeof b.weaponStats.damageRanges.headDamage === 'number') {
@@ -109,11 +118,9 @@ const app2 = createApp({
                 }
             });
             this.topHeadDamage = this.headDamageArray.slice(0, 3)
-            console.log(this.headDamageArray);
-            console.log(this.topHeadDamage);
             return this.topHeadDamage
         },
-
+        // no usada
         bodyDamage(){
             this.bodyDamageArray = this.weaponsBK.sort((a, b) => {
                 if (a.weaponStats && b.weaponStats && typeof a.weaponStats.damageRanges.bodyDamage === 'number' && typeof b.weaponStats.damageRanges.bodyDamage === 'number') {
@@ -123,11 +130,10 @@ const app2 = createApp({
                 }
             });
             this.topBodyDamage = this.bodyDamageArray.slice(0,3)
-            console.log(this.bodyDamageArray);
-            console.log(this.topBodyDamage);
+            let objetoTop3={};
             return this.topBodyDamage
         },
-
+        // no usada
         range(){
             this.rangeArray = this.weaponsBK.sort((a, b) => {
                 if (a.weaponStats && b.weaponStats && typeof a.weaponStats.damageRanges.rangeStartMeters === 'number' && typeof b.weaponStats.damageRanges.rangeStartMeters === 'number') {
@@ -137,11 +143,8 @@ const app2 = createApp({
                 }
             });
             this.topRange = this.rangeArray.slice(0, 3)
-            console.log(this.rangeArray);
-            console.log(this.topRange);
             return this.topRange
         },
-
         calculateLowerCost() {
             this.lowerCost = this.weaponsBK.slice().sort((a, b) => {
                 if (a.weaponStats && b.weaponStats && typeof a.shopData.cost === 'number' && typeof b.shopData.cost === 'number') {
@@ -151,11 +154,12 @@ const app2 = createApp({
                 }
             });
             this.topLowerCost = this.lowerCost.slice(0, 3)
-            console.log(this.lowerCost)
-            console.log(this.topLowerCost)
+            let objetoTop3={};
+            objetoTop3.name="Most Lower Cost"
+            objetoTop3.top=[...this.topLowerCost]
+            this.Tops.push(objetoTop3);
             return this.topLowerCost
         },
-
         calculateHigherCost() {
             this.higherCost = this.weaponsBK.slice().sort((a, b) => {
                 if (a.weaponStats && b.weaponStats && typeof a.shopData.cost === 'number' && typeof b.shopData.cost === 'number') {
@@ -164,10 +168,32 @@ const app2 = createApp({
                     return 0
                 }
             });
-            this.topHigherCost = this.higherCost.slice(0, 3)
-            console.log(this.higherCost)
-            console.log(this.topHigherCost)
+            this.topHigherCost = this.higherCost.slice(0, 3);
+            let objetoTop3={};
+            objetoTop3.name="Most Hegher Cost"
+            objetoTop3.top=[...this.topHigherCost]
+            this.Tops.push(objetoTop3);
             return this.topHigherCost
+        },
+
+        extrarRangos(){
+          let weaponsAux = [...this.weapons] 
+          let rangos=[];
+          weaponsAux.forEach(arma => {
+            if (arma.weaponStats && arma.weaponStats.damageRanges) {
+              arma.weaponStats.damageRanges.forEach(element => {
+                element.id = arma.uuid
+                element.nameArma = arma.displayName
+                rangos.push(element)
+              });
+              
+            }
+          }); 
+          rangos.sort( (a,b) =>{
+            return a.uuid - b.uuid
+          } )
+          console.log(weaponsAux[0]);
+          console.log(rangos);
         }
     },
 

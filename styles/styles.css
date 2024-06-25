@@ -276,7 +276,6 @@ footer a {
 }
 /* mauricio yepes css*/
 .background-weapons{
-    border: solid 2px rgb(0, 255, 106);
     background: url('/images/backgroundWeapons.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
@@ -463,8 +462,12 @@ transform: scale(1.5);
 
 }
 
+.numeral{
+    color: rgba(255, 70, 85);
+    font-size: xx-large;
+}
 
 .contStats .card a{
-    font-size: 2vw;
+    font-size: large;
 
 }
