@@ -4,6 +4,7 @@ console.log(urlGameModes)
 //Url Games API
 const urlGamesModes = "https://valorant-api.com/v1/gamemodes"
 const urlGamesModesEquippables = "https://valorant-api.com/v1/gamemodes/equippables"
+const urlThemes = "https://valorant-api.com/v1/themes"
 
 const { createApp } = Vue
 
@@ -53,12 +54,14 @@ const app = createApp({
           description: 'Accelerated version of Standard mode where the first team to win 5 out of 9 rounds takes the victory.'
         },
       ],
-      gameModesEquipables: []
+      gameModesEquipables: [],
+      themes: []
     }
   },
   created() {
     this.pullDataGamesModes(urlGamesModes)
     this.pullDataGamesModesEquippables(urlGamesModesEquippables)
+    this.pullData(urlThemes)
   },
   methods: {
     pullDataGamesModes(url) {
@@ -69,6 +72,13 @@ const app = createApp({
     pullDataGamesModesEquippables(url) {
       fetch(url).then(Response => Response.json()).then(data => {
         this.gameModesEquipables = data.data
+      })
+    },
+    pullData(url){
+      fetch(url).then(Response=>Response.json()).then(data => {
+        console.log(data);
+        this.themes = data.data
+        this.themes = this.themes.filter(theme => theme.displayIcon)
       })
     }
   },

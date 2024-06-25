@@ -1,23 +1,25 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 #main {
     font-family: 'Karantina', sans-serif;
 }
 
 /* NAVBAR */
-.nav-link, .dropdown-item{
+.nav-link,
+.dropdown-item {
     color: white;
 }
 
-.nav-link:hover, .dropdown-item:hover{
+.nav-link:hover,
+.dropdown-item:hover {
     color: #FF0000;
 }
 
-.seccionAgentes{
+.seccionAgentes {
     background-color: #FF4655;
 }
 
@@ -45,31 +47,41 @@
     object-fit: cover;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
+
 /* Tamaños proporcionales */
 .image-card:nth-child(1) {
-    flex: 1.2; /* Más pequeño */
+    flex: 1.2;
+    /* Más pequeño */
     left: 10%;
     z-index: 1;
 
 }
+
 .image-card:nth-child(2) {
-    flex: 1.5; /* Mediano */
+    flex: 1.5;
+    /* Mediano */
     left: 5%;
     z-index: 2;
 
 }
+
 .image-card:nth-child(3) {
-    flex: 1.7; /* Más grande */
+    flex: 1.7;
+    /* Más grande */
     z-index: 3;
 }
+
 .image-card:nth-child(4) {
-    flex: 1.5; /* Mediano */
+    flex: 1.5;
+    /* Mediano */
     right: 5%;
     z-index: 2;
 
 }
+
 .image-card:nth-child(5) {
-    flex: 1.2; /* Más pequeño */
+    flex: 1.2;
+    /* Más pequeño */
     right: 10%;
     z-index: 1;
 
@@ -77,9 +89,11 @@
 
 /* Efecto hover */
 .image-card:hover {
-    flex: 3; /* Se expande más */
+    flex: 3;
+    /* Se expande más */
     z-index: 4;
 }
+
 
 .image-card:hover img {
     filter: brightness(1.2);
@@ -88,25 +102,28 @@
 
 
 
-.h2{
+.h2 {
     font-size: 8vw;
 }
-.boton1{
+
+.boton1 {
     background: linear-gradient(45deg, #FF3844, #FF7562);
     font-size: 4vw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .boton1:hover {
     background: linear-gradient(45deg, #ff4e4e, #FF7562);
     transform: scale(1.1);
 }
 
-.seccionMapas img{
+.seccionMapas img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
-footer a{
+
+footer a {
     padding-right: 1.5vh;
 }
 
@@ -118,16 +135,19 @@ footer a{
         height: 40vh;
         margin-bottom: 5vh;
     }
+
     .image-card {
         margin: 0 0.5%;
     }
-    .boton1{
+
+    .boton1 {
         font-size: 6vw;
     }
-    .h2{
-        font-size:11vh;
+
+    .h2 {
+        font-size: 11vh;
     }
-    
+
 }
 
 
@@ -135,15 +155,18 @@ footer a{
     .image-container {
         height: 30vh;
     }
+
     .image-card {
         margin: 0 0.5%;
-        
+
     }
-    .boton1{
+
+    .boton1 {
         font-size: 7vw;
     }
-    .h2{
-        font-size:8vh;
+
+    .h2 {
+        font-size: 8vh;
     }
 }
 
@@ -152,36 +175,51 @@ footer a{
 /*---------------------- GENRALS STYLES MY BOOK JHEESFRI-------------------*/
 
 /* Fuentes/Estilos De Letras*/
-.f_f_times{
-    font-family:'Times New Roman', Times, serif ;
+.f_f_times {
+    font-family: 'Times New Roman', Times, serif;
 }
-.f_f_arial{
+
+.f_f_arial {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Colors */
+
+.col_white {
+    color: white;
 }
 
 /* Background  */
 
-.bg_color_valorant{
+.bg_color_valorant {
     background-color: #FF4655;
 }
 
-.bg_black_transparent_8{
+.bg_black_transparent_1 {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.bg_black_transparent_3 {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bg_black_transparent_8 {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.bg_valorant{
+.bg_valorant { 
+    margin: 0;
+    padding: 0;
     background-image: url('https://fondosmil.co/fondo/54287.jpg');
+    /* Reemplaza con la ruta a tu imagen de fondo */
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
+    /* Ajusta la imagen de fondo para cubrir todo el área */
+    background-attachment: fixed;
 }
 
 /*Page InfoHtml*/
 
-.descriptionGeneral{
-    width: 70%;
-    font-family:Arial, Helvetica, sans-serif;
+.fatherInfo:hover{
+    border: #FF0000 solid 1px;
 }
 
 /* .bgPersonalized{
@@ -201,7 +239,7 @@ footer a{
     width: 100%;
 
 } */
-.card {
+.custom-card .card {
     border: none;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -209,23 +247,23 @@ footer a{
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card:hover {
+.custom-card .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card:active {
+.custom-card .card:active {
     transform: scale(0.95);
 }
 
-.card-img-top {
+.custom-card .card-img-top {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     object-fit: cover;
     /* border: 2px blue solid; */
 }
 
-.card-title {
+.custom-card .card-title {
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -250,7 +288,8 @@ footer a{
 
 }
 /* mauricio yepes css*/
-body {
+.background-weapons{
+    border: solid 2px rgb(0, 255, 106);
     background: url('/images/backgroundWeapons.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
@@ -334,12 +373,81 @@ body {
 #inputWeaponBg{
     background-color: rgba(6, 140, 145, 0.6);
 }
-/*footer migracion*/
-#footerBg{
-    
+.countainDW{
+    display: flex;
+    align-items: start;
+    border: solid 2px red;
+    height: 70vw;
+}
+#iconWeapon{
+    margin-top: 5vw;
+    margin-left: 3vw;
+    border: solid 2px green;
+    width: 35vw;
+    height: 20vw;
+}
+#iconWeapon img{
+    width: 100%;
+    height: 100%;
+}
+.weapon-skins-section{
+    border: solid 2px red;
+    width: 40vw;
+    height: 20vw;
+}
+.weapon-skins-section img{
+    /* border: solid 2px gold; */
+    max-height: 20vw;
+    object-fit: cover;
 }
 
+/* Estilos de mapas */
 
+.map{
+    background: radial-gradient(circle,   #00ff22, #212529);          
+}
 
+#mapsBody{
+    background-color: #1A242E;
+}
+
+#imgMap:hover{
+    transform: scale(1.5);
+}
+
+#map:hover {
+    transform: scale(1.2);
+}
+
+.star:hover, .star-filled:hover{
+transform: scale(1.5);
+}
+
+.star {
+  fill: gray;
+  cursor: pointer;
+}
+
+.star-filled {
+  fill: gold;
+}
+
+.star:hover, .star-filled:hover{
+    transform: scale(1.5);
+}
+
+.video{
+    /* fixed o absolute */
+   position: fixed; 
+   right: 0;
+   bottom: 0;
+   height: auto;
+    z-index: -1;
+   
+}
+
+#modalBody{
+    background-color: #212529;
+}
 
  
