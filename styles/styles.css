@@ -7,6 +7,9 @@
 #main {
     font-family: 'Karantina', sans-serif;
 }
+#mainStats{
+    font-family: 'Karantina', sans-serif;
+}
 
 /* NAVBAR */
 .nav-link, .dropdown-item{
@@ -184,23 +187,7 @@ footer a{
     font-family:Arial, Helvetica, sans-serif;
 }
 
-/* .bgPersonalized{
-    background-color: #e1dacd;
-    height: 15vw;
-    width: 30vw;
-}
-.bgPersonalized img{
-    width: 80%;
-    object-fit: cover;   
-}
-.fondo2{
-    display: flex;
-    text-align: center;
-    border: solid 2px red;
-    height: 4vw;
-    width: 100%;
 
-} */
 .card {
     border: none;
     border-radius: 15px;
@@ -334,12 +321,33 @@ body {
 #inputWeaponBg{
     background-color: rgba(6, 140, 145, 0.6);
 }
-/*footer migracion*/
-#footerBg{
-    
+
+.footerS:hover {
+    transform: scale(1);
 }
 
 
 
 
- 
+/* STATS SEBASTIAN */
+.noStyle:hover{
+    transform: scale(1);
+    }
+.tituloStats{
+    background-color: rgba(255, 70, 85, 0.5);
+}
+
+.contStats{
+    border-radius: 15px;
+}
+
+.seccionesStats{
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+
+.contStats .card a{
+    font-size: 2vw;
+
+}
