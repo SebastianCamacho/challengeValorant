@@ -1,6 +1,6 @@
 let urlBase='https://valorant-api.com/'
-let urlAgents=urlBase+'v1/agents'
-console.log(urlAgents);
+let urlWeapons=urlBase+'v1/agents'
+console.log(urlWeapons);
 
 const {createApp}=Vue;
 const app= createApp({
@@ -19,7 +19,7 @@ const app= createApp({
         }
     },
     created(){
-        this.traerData(urlAgents).then(()=>{
+        this.traerData(urlWeapons).then(()=>{
             this.checkForAgentDetail()
             console.log('Agents after fetch:', this.agents);
         })
