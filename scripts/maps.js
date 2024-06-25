@@ -6,7 +6,7 @@ const app = createApp({
 
     data(){
         return{
-            maps:[],
+            maps:[], 
             mapsBK:[],
             searchText:"",
             favoriteMaps:[]
