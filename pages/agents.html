@@ -19,11 +19,13 @@
         }
         
 #card:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .amImage:hover{
     transform: scale(1.5);
 }
+
+
 /* .modal-content{
   background: radial-gradient(circle,   #ff0033, #212529); 
     
@@ -224,7 +226,7 @@ transform: scale(1.5);
         </div>
         
           <div v-for="event in agents" :key="event.uuid"  id="card" class="card bg-dark"  >
-            <img class="card-img-top alternativeImag amImage" :src="event.background" alt="" height="250vh" width="45vh">
+            <img class="card-img-top alternativeImag amImagBack" :src="event.background" alt="" height="250vh" width="45vh">
             <a :href="'./detailsAgents.html?value='+event.uuid">
                 <img :src="event.fullPortrait"   class="card-img-top amImage" alt="..." height="250vh" width="45vh" >
             </a>
