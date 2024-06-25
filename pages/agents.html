@@ -24,10 +24,18 @@
 img:hover{
     transform: scale(1.5);
 }
-.lista{
+/* .modal-content{
+  background: radial-gradient(circle,   #ff0033, #212529); 
+    
+            transition: transform 0.3s ease;
+} */
+.lista,.navbar{
     display: flex;
     justify-content: space-between;
-    background-color: #212529;
+    background: radial-gradient(circle,   #ff0033, #212529); 
+           /*  background: linear-gradient(to bottom, #c7f458ff, #d56324ff, #3a2656ff, #3a7233ff);
+ */
+            transition: transform 0.3s ease;
     color: #ffffff;
    
 }
@@ -81,6 +89,33 @@ transform: scale(1.5);
    object-position: center top;
    opacity: 0.8;
 }
+.modal-favorite .modal-content {
+      position: relative;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .modal-favorite .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: -1;
+    
+    }
+
+    .modal-favorite .carousel-caption h1 {
+      color: white;
+    }
+    .modal-footer{
+      display: flex;
+      justify-content: center;
+    }
+
+
     </style>
     <title>Agents</title>
 </head>
@@ -140,74 +175,47 @@ transform: scale(1.5);
         </div>
       </nav>
 
-    <div class="lista" >
-        {{superFilter}}
-       <div class="listCheck" id="lista">
-           <div v-for="role in roles" class="form-check form-check-inline">
-               
-               <input v-model="roleSelect" class="form-check-input" type="checkbox" :id="role.displayName" :value="role.displayName">
-               <label class="form-check-label" :for="role.displayName">{{role.displayName}}</label>
-           </div>
-       </div>
-       <form class="d-flex" role="search">
-           <input v-model="textSearch" id="buscar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-           
-       </form>
-   </div>
+   
    
 </header>
 <main >
-    <div v-if="favorites.length > 0" class="row row-cols-1 row-cols-md-2 g-4" style="display: flex; justify-content: space-around;">
-        
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://www.pcgamesn.com/wp-content/uploads/2020/07/valorant-tier-list-best-agents.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Favorites</h1>
-                    
-                  </div>
-              </div>
-              </div>
-              </div>
-          
 
-
-        <div v-for="event in favorites"  :key="event.displayName" id="card" class="card bg-dark">
-            <img class="card-img-top alternativeImag" :src="event.background" alt="" height="250vh" width="45vh">
-            <a @click.prevent="goToDetails(event)">
-                <img :src="event.fullPortrait"   class="card-img-top" alt="..." height="250vh" width="45vh" >
-            </a>
-          <div class="card-body">
-            <div class="card-footer bg-dark border-danger" style="color: #ffffff; text-align: center;">
-              {{ event.displayName }}
-              <div>
-                <a @click="toggleFavorite(event)">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                       :class="{'star': true, 'star-filled': isFavorite(event)}">
-                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img style="object-position: center; height:50vh ; object-fit: cover;" src="https://i.pinimg.com/originals/be/1c/05/be1c05ae9f9d3447efc866e0e4f588e5.png" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h1>AGENTS</h1>
+            
           </div>
-        </div>
       </div>
+      </div>
+      </div>
+
     
+  <div class="lista" style="padding: 2vh 2vh; text-align: center; margin-top: 2vh;"  >
+    {{superFilter}}
+   <div class="listCheck" id="lista">
+       <div v-for="role in roles" class="form-check form-check-inline">
+           
+           <input v-model="roleSelect" class="form-check-input" type="checkbox" :id="role.displayName" :value="role.displayName">
+           <label class="form-check-label" :for="role.displayName">{{role.displayName}}</label>
+       </div>
+   </div>
+   <form class="d-flex" role="search">
+    <button type="button" data-bs-toggle="modal" data-bs-target="#modalFavorites" class="btn btn-dark" style="margin-right: 2vh;">Favorites</button>
+       <input v-model="textSearch" id="buscar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+       
+   </form>
+</div>
+
+   
     
 
     <div class="row row-cols-1 row-cols-md-2 g-4"style="display: flex; justify-content: space-around; padding-top: 5vh;" >
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img style="object-position: center; height:50vh ; object-fit: cover;" src="https://i.pinimg.com/originals/be/1c/05/be1c05ae9f9d3447efc866e0e4f588e5.png" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>AGENTS</h1>
-                    
-                  </div>
-              </div>
-              </div>
-              </div>
+      
+       
+              
         
          <div v-if="agents.length === 0">
             <h5  class="alert alert-primary" role="alert">"There are no agents related to your search."</h5> 
@@ -242,6 +250,63 @@ transform: scale(1.5);
             
         </div>
           </div>
+          
+      </div>
+      <!-- Modal -->
+      <div class="modal fade modal-favorite" id="modalFavorites" tabindex="-1" aria-labelledby="modalFavoritesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <!-- Video de fondo -->
+            <video class="video-background" src="https://assets.contentstack.io/v3/assets/blt2ac872571a60ee02/bltc3128a843ac2ef28/618d752b6407fe7f991e9915/background-video-d-01.mp4" autoplay muted loop playsinline></video>
+            
+            <div class="modal-header">
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://www.pcgamesn.com/wp-content/uploads/2020/07/valorant-tier-list-best-agents.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h1>Favorites</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            
+            <div class="modal-body">
+              <div class="row justify-content-evenly">
+                <div class="col-12">
+                  <div class="row">
+                    <div v-if="favorites.length > 0" class="row row-cols-1 row-cols-md-2 g-4" style="display: flex; justify-content: space-around;">
+                      <div v-for="event in favorites" :key="event.displayName" id="card" class="card bg-dark">
+                        <img class="card-img-top alternativeImag" :src="event.background" alt="" height="250vh" width="45vh">
+                        <a @click.prevent="goToDetails(event)">
+                          <img :src="event.fullPortrait" class="card-img-top" alt="..." height="250vh" width="45vh">
+                        </a>
+                        <div class="card-body">
+                          <div class="card-footer bg-dark border-danger" style="color: #ffffff; text-align: center;">
+                            {{ event.displayName }}
+                            <div>
+                              <a @click="toggleFavorite(event)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" :class="{'star': true, 'star-filled': isFavorite(event)}">
+                                  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="modal-footer ">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
       </div>
       
 </main>

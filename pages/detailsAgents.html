@@ -23,10 +23,7 @@
       border-bottom: 2px solid;
       border-color:#DC3545 ; /* Puedes usar #dc3545 para el color danger de Bootstrap */
     }
-  .h-100{
-    background-color: #1A242E;
-    opacity: 0.7;
-  }
+ 
   main{
     padding-bottom: 5vh;
    
@@ -35,11 +32,8 @@
 
     
   }
-  .h-100:hover, .h-100.active{
-    transform: scale(1.2);
-    opacity: 1;
-    cursor: pointer;
-  }
+  
+
   .agent-portrait {
   position: relative;
   width: 100%;
@@ -54,6 +48,70 @@
   transform: translateY(0);
   opacity: 1;
 }
+/* .card-container{
+  perspective: 1000px;
+} */
+ 
+ .h-100, .card-back{
+    background-color: #DC3545;
+   
+    cursor: pointer;
+  
+   
+  }
+  
+    .h-100.active, .card-back{
+    transform: scale(1.1);
+    opacity: 1;
+    position: relative;
+    transform-style: preserve-3d;
+  transition: transform 0.6s;
+   
+  }
+.h-100 {
+  position: relative;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.h-100:hover{
+  transform: scale(1.1);
+}
+
+.card-back {
+  position:absolute;
+  transform: rotateY(180deg) scaleX(-1);
+  top: 0;
+  left: 0;
+  background-color:#DC3545;
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.6s;
+  width: 16rem;
+  height: 17rem;
+  border:#1A242E 1px;
+  /* Ocultar inicialmente */
+ 
+ 
+}
+
+.h-100.active .card-back {
+  display: block; 
+  transform: translateY(0);
+  
+}
+.h-100.active{
+  transform: rotateY('180deg');
+}
+
+.card-back p{
+  font-size:15px;
+}
+
+
 
 
 
@@ -63,9 +121,16 @@
   background-size: 70%; /* Ajusta el tamaño de la imagen de fondo */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-position: center; /* Centra la imagen */
-  transform: scale(1.2); /* Escala la imagen en hover */
+  transform: scale(1.1); /* Escala la imagen en hover */
   
 }
+
+/* .navbar{
+   background: radial-gradient(circle,   #ff0033, #212529); 
+           
+            transition: transform 0.3s ease;
+} */
+
 /* .alternativeImag{
     position:relative; 
    right: 0;
@@ -175,32 +240,31 @@
               </div> 
               </div>
             </div>
+
               <div class="row">
                 <div class="col">
                   <div class="divider"></div>
                 </div>
               </div>
-              <div class="row align-items-center text-light">
-                <div class="col-md-6">
-                  <h2 style="padding: 2vh 0; text-align: center;">SPECIAL ABILITIES</h2>
-                  <div class="row row-cols-4 row-cols-md-4 g-4">
-                    <div class="col" v-for="(ability, index) in agentDetail.abilities" :key="index">
-                      <div 
-                        class="card h-100" 
-                        :class="{ active: selectAbilityIndex === index }" 
-                        @click="selectAbility(index)"
-                      >
+
+              <!-- abilities-->
+              <div class="row align-items-center text-light" style="padding: 1.5vh 0 6vh  1.5vh;">
+                <h2 style="padding: 2vh 0; text-align: center;">SPECIAL ABILITIES</h2>
+                <div class="row row-cols-4 row-cols-md-4 g-4" style="display: flex; justify-content: space-around;">
+                  <div class="col" v-for="(ability, index) in agentDetail.abilities" :key="index" style="width: 40vh;">
+                    <div class="card h-100 border-danger" :class="{ active: selectAbilityIndex === index }" @click="toggleCard(index)">
+                      <div class="card-front">
                         <img :src="ability.displayIcon" class="card-img-top" alt="...">
+                      </div>
+                      <div class="card-back" v-if="selectAbilityIndex === index">
+                        <h3>{{ ability.displayName }}</h3>
+                        <p>{{ ability.description }}</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6 text-light">
-                  <div>
-                    <h5>{{ selectedAbility.displayName }}</h5>
-                    <p>{{ selectedAbility.description }}</p>
-                  </div>
-                </div>
+ 
+              </div>
               </div>
             </div>
             
@@ -212,11 +276,7 @@
             
                 
               
-       
-
-        <section>
-          
-        </section>
+  
         
         
     </main>
