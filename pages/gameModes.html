@@ -11,7 +11,7 @@
     <link rel="icon" href="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt50870b13992cdf47/63b0d7d089f85210f400107e/val-logo-small.png">
 </head>
 
-<body id="bodyGM">
+<body id="bodyGM" class="bg_valorant">
     <header>
         <nav class="navbar navbar-expand-sm bg-dark">
             <div class="container-fluid justify-content-between">
@@ -58,33 +58,38 @@
         <!-- general content -->
 
         <!-- carousel 1 gameModes-->
-        <div class="bg_color_valorant d-flex justify-content-evenly py-1">
-            <div id="containerFatherGameModes" class="d-flex justify-content-center rounded">
-                <div id="carouselExampleCaptions" class="carousel slide my-3">
+        <div class="d-flex m-5 p-5 rounded">
+            <div id="containerFatherGameModes" class="d-flex justify-content-center">
+                <div id="carouselExampleCaptions" class="bg_color_valorant carousel slide m-5 p-5 rounded ">
                     <div class="carousel-indicators">
                         <!-- buttons end -->
-                        <button v-for="(mode, index) in gameModes" type="button" data-bs-target="#carouselExampleCaptions" :data-bs-slide-to="index" :class="{ active: index === 0 }" :aria-current="{ true: index === 0 }" :aria-label="index + 1" class="d-none"></button>
+                        <button v-for="(mode, index) in gameModes" type="button"
+                            data-bs-target="#carouselExampleCaptions" :data-bs-slide-to="index"
+                            :class="{ active: index === 0 }" :aria-current="{ true: index === 0 }"
+                            :aria-label="index + 1" class="d-none">ç
 
+                        </button>
                     </div>
                     <div class="carousel-inner">
                         <div v-for="(mode, index) in gameModes" :class="['carousel-item', { active: index === 0 }]">
                             <div class="d-flex">
                                 <div>
                                     <!-- Image game mode -->
-                                    <img :src="mode.listViewIconTall ? mode.listViewIconTall : 'https://pbs.twimg.com/media/Fv9p18LWYAAd2t_.png'" class="rounded-3 d-block object-fit-cover rounded"
-                                        :alt="mode.displayName" style="width: 25vw; height: 60vh;">
+                                    <img :src="mode.listViewIconTall ? mode.listViewIconTall : 'https://pbs.twimg.com/media/Fv9p18LWYAAd2t_.png'"
+                                        class="rounded-3 d-block object-fit-cover rounded" :alt="mode.displayName"
+                                        style="width: 25vw; height: 60vh;">
                                 </div>
-                                <div  class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-center">
                                     <!-- Icon game mode -->
-                                    <img :src="mode.displayIcon ? mode.displayIcon : 'https://media.valorant-api.com/gamemodes/a8790ec5-4237-f2f0-e93b-08a8e89865b2/displayicon.png'" class="rounded-3 d-block object-fit-scale rounded"
-                                        :alt="mode.displayName" style="width: 25vw; height: 60vh;">
-                                   </div>
-                                <div style="width: 45vw; height: 60vh;"
-                                    class="d-flex justify-content-center">
+                                    <img :src="mode.displayIcon ? mode.displayIcon : 'https://media.valorant-api.com/gamemodes/a8790ec5-4237-f2f0-e93b-08a8e89865b2/displayicon.png'"
+                                        class="rounded-3 d-block object-fit-scale rounded" :alt="mode.displayName"
+                                        style="width: 25vw; height: 60vh;">
+                                </div>
+                                <div style="width: 35%; height: 60vh;" class="d-flex justify-content-center">
                                     <div class="text-center d-flex flex-column justify-content-center">
                                         <!-- description game mode -->
-                                       <h3 class="mt-4 f_f_times w-75">{{gameModesDetails[index].name}}</h3>
-                                       <p class="p mt-4 f_f_arial w-75">{{gameModesDetails[index].description}}</p>
+                                        <h3 class="mt-4 f_f_times w-75">{{gameModesDetails[index].name}}</h3>
+                                        <p class="p mt-4 f_f_arial w-75">{{gameModesDetails[index].description}}</p>
                                     </div>
                                 </div>
 
@@ -110,27 +115,28 @@
             </div>
         </div>
         <!-- carousel 2 gameModes equippables -->
-        <div class="twoCarousel d-flex justify-content-evenly py-1 bg_valorant">
-            <div class="d-flex justify-content-center rounded bg_black_transparent_8 w-100">
+        <div class="twoCarousel d-flex justify-content-evenly bg_black_transparent_8 p-5 m-5">
+            <div class="d-flex justify-content-center rounded w-100">
 
                 <div id="carouselExampleCaptions2" class="carousel slide my-3">
                     <div class="carousel-indicators">
-                        <button v-for="(mode, index) in gameModesEquipables" type="button"
+                        <button v-for="(theme, index) in themes" type="button"
                             data-bs-target="#carouselExampleCaptions2" :data-bs-slide-to="index"
                             :class="{ active: index === 0 }" :aria-current="{ true: index === 0 }"
                             :aria-label="index + 1"></button>
 
                     </div>
                     <div class="carousel-inner">
-                        <div v-for="(mode, index) in gameModesEquipables"
+                        <div v-for="(theme, index) in themes"
                             :class="['carousel-item', { active: index === 0 }]">
-                            <img :src="mode.displayIcon" class="rounded-3 d-block object-fit-scale" :alt="mode.displayName" style="width: 40vw; height: 70vh;">
-                                <div class="carousel-caption d-md-block">
-                                    <h5 class="fs-1 f_f_times">Mode: {{mode.displayName}}</h5>
+                            <img :src="theme.displayIcon" class="rounded-3 d-block object-fit-scale"
+                                :alt="theme.displayName" style="width: 30vw; height: 50vh;">
+                            <div class="carousel-caption d-md-block">
+                                <h5 class="fs-1 f_f_times">Theme: {{theme.displayName}}</h5>
 
-                                </div>
+                            </div>
                         </div>
-                        
+
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2"
                         data-bs-slide="prev">
