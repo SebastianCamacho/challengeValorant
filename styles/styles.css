@@ -80,6 +80,7 @@
     flex: 3; /* Se expande más */
     z-index: 4;
 }
+
 .image-card:hover img {
     filter: brightness(1.2);
 }
@@ -183,6 +184,232 @@ footer a{
     font-family:Arial, Helvetica, sans-serif;
 }
 
+/* .bgPersonalized{
+    background-color: #e1dacd;
+    height: 15vw;
+    width: 30vw;
+}
+.bgPersonalized img{
+    width: 80%;
+    object-fit: cover;   
+}
+.fondo2{
+    display: flex;
+    text-align: center;
+    border: solid 2px red;
+    height: 4vw;
+    width: 100%;
 
+} */
+.custom-card .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
+.custom-card .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
+.custom-card .card:active {
+    transform: scale(0.95);
+}
+
+.custom-card .card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    object-fit: cover;
+    /* border: 2px blue solid; */
+}
+
+.custom-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.bgPersonalized {
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    display: flex;
+    justify-content: space-between;
+    /* border: solid 2px red; */
+}
+
+.fondo2 {
+    background: #f8f9fa;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    /* border: solid 4px green; */
+}
+#textFound{
+    text-align: center;
+    width: 100%;
+
+}
+/* mauricio yepes css*/
+.background-weapons{
+    border: solid 2px rgb(0, 255, 106);
+    background: url('/images/backgroundWeapons.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.custom-input-group {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.custom-fondo {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.custom-card {
+    background: radial-gradient(circle, #3be7e7, #212529);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    overflow: visible;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.custom-card-img-container {
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+}
+
+.custom-card-img {
+    transition: transform 0.3s ease;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.custom-card:hover .custom-card-img {
+    transform: translateY(-10px) scale(1.2);
+    z-index: 2;
+}
+
+.custom-card-footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    z-index: 2;
+}
+
+.custom-btn {
+    background: radial-gradient(circle, #3be7e7, #212529);
+    border: 2px solid #3be7e7;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(4, 135, 158, 0.4);
+    text-transform: uppercase;
+}
+
+.custom-btn:hover {
+    background: radial-gradient(circle, #3be7e7, #1a1d1f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(6, 140, 145, 0.6);
+}
+
+.custom-text-found {
+    color: white;
+}
+#inputWeaponBg{
+    background-color: rgba(6, 140, 145, 0.6);
+}
+.countainDW{
+    display: flex;
+    align-items: start;
+    border: solid 2px red;
+    height: 70vw;
+}
+#iconWeapon{
+    margin-top: 5vw;
+    margin-left: 3vw;
+    border: solid 2px green;
+    width: 35vw;
+    height: 20vw;
+}
+#iconWeapon img{
+    width: 100%;
+    height: 100%;
+}
+.weapon-skins-section{
+    border: solid 2px red;
+    width: 40vw;
+    height: 20vw;
+}
+.weapon-skins-section img{
+    /* border: solid 2px gold; */
+    max-height: 20vw;
+    object-fit: cover;
+}
+
+/* Estilos de mapas */
+
+.map{
+    background: radial-gradient(circle,   #00ff22, #212529);          
+}
+
+#mapsBody{
+    background-color: #1A242E;
+}
+
+#imgMap:hover{
+    transform: scale(1.5);
+}
+
+#map:hover {
+    transform: scale(1.2);
+}
+
+.star:hover, .star-filled:hover{
+transform: scale(1.5);
+}
+
+.star {
+  fill: gray;
+  cursor: pointer;
+}
+
+.star-filled {
+  fill: gold;
+}
+
+.star:hover, .star-filled:hover{
+    transform: scale(1.5);
+}
+
+.video{
+    /* fixed o absolute */
+   position: fixed; 
+   right: 0;
+   bottom: 0;
+   height: auto;
+    z-index: -1;
+   
+}
+
+#modalBody{
+    background-color: #212529;
+}
+
+ 
