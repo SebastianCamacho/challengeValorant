@@ -3,7 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            weapon: null
+            weapon: [],
+            weaponBK: []
         };
     },
     created() {
@@ -24,9 +25,12 @@ createApp({
                     this.weapon = data.data;
                 })
                 .catch(error => console.error('Error fetching weapon details:', error));
+
         },
         extractCategoryName(category) {
             return category.split('::')[1] || category;
-        }
+        },
+
+
     }
 }).mount('#appWeaponDetails');
