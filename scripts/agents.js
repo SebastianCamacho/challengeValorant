@@ -141,7 +141,24 @@ computed:{
     selectedAbility(){
         return this.agentDetail && this.agentDetail.abilities.length > 0 ? this.agentDetail.abilities[this.selectAbilityIndex] : {};
     } */
-}
+},
+watch: {
+    agentDetail: function (newVal) {
+      if (newVal && newVal.displayName) {
+        document.title = newVal.displayName;
+      } else {
+        document.title = 'Agents';
+      }
+    }
+  },
+  mounted() {
+    if (this.agentDetail && this.agentDetail.displayName) {
+      document.title = this.agentDetail.displayName;
+    }else{
+        document.title='Agents'
+    }
+  }
+
 
 
 }).mount('#app')

@@ -3,29 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 #main {
     font-family: 'Karantina', sans-serif;
 }
 #mainStats{
     font-family: 'Karantina', sans-serif;
 }
-
 /* NAVBAR */
 .nav-link,
 .dropdown-item {
     color: white;
 }
-
 .nav-link:hover,
 .dropdown-item:hover {
     color: #FF0000;
 }
-
 .seccionAgentes {
     background-color: #FF4655;
 }
-
 
 /* ABANICO DE IMAGENES */
 .image-container {
@@ -34,7 +29,6 @@
     align-items: center;
     height: 60vh;
 }
-
 .image-card {
     flex: 1;
     transition: flex 0.3s ease, z-index 0.3s ease;
@@ -43,31 +37,25 @@
     overflow: hidden;
     position: relative;
 }
-
 .image-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
-
 /* Tamaños proporcionales */
 .image-card:nth-child(1) {
     flex: 1.2;
     /* Más pequeño */
     left: 10%;
     z-index: 1;
-
 }
-
 .image-card:nth-child(2) {
     flex: 1.5;
     /* Mediano */
     left: 5%;
     z-index: 2;
-
 }
-
 .image-card:nth-child(3) {
     flex: 1.7;
     /* Más grande */
@@ -79,132 +67,96 @@
     /* Mediano */
     right: 5%;
     z-index: 2;
-
 }
-
 .image-card:nth-child(5) {
     flex: 1.2;
     /* Más pequeño */
     right: 10%;
     z-index: 1;
-
 }
-
 /* Efecto hover */
 .image-card:hover {
     flex: 2;
     /* Se expande más */
     z-index: 4;
 }
-
-
 .image-card:hover img {
     filter: brightness(1.2);
 }
-
-
-
-
 .h2 {
     font-size: 8vw;
 }
-
 .boton1 {
     background: linear-gradient(45deg, #FF3844, #FF7562);
     font-size: 4vw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .boton1:hover {
     background: linear-gradient(45deg, #ff4e4e, #FF7562);
     transform: scale(1.1);
 }
-
 .seccionMapas img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
-
 footer .card{
     border-radius: 0;
 }
-
 footer a {
     padding-right: 1.5vh;
 }
-
-
-
 /* Responsividad */
 @media (max-width: 768px) {
     .image-container {
         height: 40vh;
         margin-bottom: 5vh;
     }
-
     .image-card {
         margin: 0 0.5%;
     }
-
     .boton1 {
         font-size: 6vw;
     }
-
     .h2 {
         font-size: 11vh;
     }
-
 }
-
-
 @media (max-width: 480px) {
     .image-container {
         height: 30vh;
     }
-
     .image-card {
         margin: 0 0.5%;
-
     }
-
     .boton1 {
         font-size: 7vw;
     }
-
     .h2 {
         font-size: 8vh;
     }
 }
 
-
-
 /*---------------------- GENRALS STYLES MY BOOK JHEESFRI-------------------*/
-
 /* Fuentes/Estilos De Letras*/
 .f_f_times {
     font-family: 'Times New Roman', Times, serif;
 }
-
 .f_f_arial {
     font-family: Arial, Helvetica, sans-serif;
 }
-
 /* Colors */
-
 .col_white {
     color: white;
 }
-
 /* Background  */
-
 .bg_color_valorant {
     background-color: #FF4655;
 }
-
 .bg_black_transparent_1 {
     background-color: rgba(0, 0, 0, 0.1);
 }
+
 .bg_black_transparent_3 {
     background-color: rgba(0, 0, 0, 0.3);
 }
@@ -232,7 +184,7 @@ footer a {
     width: 25vw;
 }
 
-.bg_valorant { 
+.bg_valorant {
     margin: 0;
     padding: 0;
     background-image: url('https://fondosmil.co/fondo/54287.jpg');
@@ -241,10 +193,9 @@ footer a {
     /* Ajusta la imagen de fondo para cubrir todo el área */
     background-attachment: fixed;
 }
-
 /*Page InfoHtml*/
 
-.fatherInfo:hover{
+.fatherInfo:hover {
     border: #FF0000 solid 1px;
 }
 
@@ -270,38 +221,26 @@ footer a {
     border: none;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .custom-card .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 .custom-card .card:active {
     transform: scale(0.95);
-}
-
-.custom-card .card-img-top {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    object-fit: cover;
-    /* border: 2px blue solid; */
 }
 
 .custom-card .card-title {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
 .bgPersonalized {
     background: linear-gradient(135deg, #ece9e6, #ffffff);
     display: flex;
     justify-content: space-between;
     /* border: solid 2px red; */
 }
-
 .fondo2 {
     background: #f8f9fa;
     height: 40%;
@@ -309,29 +248,38 @@ footer a {
     justify-content: center;
     /* border: solid 4px green; */
 }
-#textFound{
+
+#textFound {
     text-align: center;
     width: 100%;
-
 }
+
 /* mauricio yepes css*/
-.background-weapons{
+
+.background-weapons {
     background: url('/images/backgroundWeapons.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
+
+}
+
+.weapon-card-container {
+    width: 90vw;
+    border-radius: 35px;
+    background-image: url("https://i.pinimg.com/originals/7a/f3/6e/7af36e3f2da8ec425edac04747a8f3a3.png");
+    object-fit: cover;
+    margin-bottom: 80vw;
 }
 
 .custom-input-group {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
 }
-
 .custom-fondo {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
 }
-
 .custom-card {
     background: radial-gradient(circle, #3be7e7, #212529);
     color: white;
@@ -344,101 +292,175 @@ footer a {
     justify-content: space-between;
 }
 
+.custom-card-dtls {
+    background: radial-gradient(circle, #15ced449, #f5f5ef1f);
+    border-radius: 12%;
+}
+.custom-card-dtls img{
+    object-fit: contain;
+    width: 100%;
+}
+
+.normalizerCarr {
+    object-fit: cover;
+}
+
 .custom-card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
-
 .custom-card-img-container {
     position: relative;
     overflow: visible;
     z-index: 1;
 }
-
 .custom-card-img {
     transition: transform 0.3s ease;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     position: relative;
     z-index: 1;
+    object-fit: contain;
+    height: 16vh;
+    width: 20vw;
 }
+
+.custom-card-img-dtls {
+    transition: transform 0.3s ease;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+    z-index: 1;
+    object-fit: contain;
+    width: 45vw;
+    height: 35vh;
+}
+
 
 .custom-card:hover .custom-card-img {
     transform: translateY(-10px) scale(1.2);
     z-index: 2;
 }
-
 .custom-card-footer {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
     z-index: 2;
 }
-
 .custom-btn {
-    background: radial-gradient(circle, #3be7e7, #212529);
-    border: 2px solid #3be7e7;
     color: white;
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 10px;
     padding: 10px 20px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(4, 135, 158, 0.4);
+    border-radius: 1vw;
     text-transform: uppercase;
 }
 
-.custom-btn:hover {
-    background: radial-gradient(circle, #3be7e7, #1a1d1f);
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(6, 140, 145, 0.6);
-}
 
 .custom-text-found {
     color: white;
 }
-#inputWeaponBg{
+
+#inputWeaponBg {
     background-color: rgba(6, 140, 145, 0.6);
 }
-.countainDW{
-    display: flex;
-    align-items: start;
-    border: solid 2px red;
-    height: 70vw;
-}
-#iconWeapon{
-    margin-top: 5vw;
-    margin-left: 3vw;
-    border: solid 2px green;
-    width: 35vw;
-    height: 20vw;
-}
-#iconWeapon img{
-    width: 100%;
-    height: 100%;
-}
-.weapon-skins-section{
-    border: solid 2px red;
+
+.weapon-skins-section {
     width: 40vw;
     height: 20vw;
+    max-width: 40vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.weapon-skins-section img{
+
+.weapon-skins-section img {
     /* border: solid 2px gold; */
-    max-height: 20vw;
+    max-width: 30vw;
+    max-height: 15vw;
     object-fit: cover;
+}
+
+
+#carouselSize {
+    width: 70vw;
+    background-color: #e9dbd91e;
+}
+
+
+.weapon-stats-section { 
+    border: solid 2px gold;
+    background-color: #005f73;
+    /* Fondo oscuro aguamarina */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    /* Sombra */
+    color: #e0fbfc;
+    /* Texto claro */
+    font-family: 'Orbitron', sans-serif;
+    /* Fuente gamer */
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.weapon-title {
+    font-size: 2rem;
+    color: #ffeeeed5;
+    /* Título en aguamarina */
+    margin-bottom: 10px;
+}
+
+.weapon-stat {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.weapon-stat strong {
+    color: #000000;
+    /* Subtítulo en un tono más claro */
+}
+
+.catLetter {
+    color: #000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Bootstrap Styles */
+.carousel-inner {
+    position: relative;
+    width: 70%;
+    /* Adjust as needed */
+    margin: 0 auto;
+    /* Center the carousel */
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.skins-carousel-container {
+    width: 100%;
 }
 
 /* Estilos de mapas */
 
-.map{
-    background: radial-gradient(circle,   #00ff22, #212529);          
+.map {
+    background: radial-gradient(circle, #00ff22, #212529);
 }
 
-#mapsBody{
+#mapsBody {
     background-color: #1A242E;
 }
-
 #imgMap:hover{
     transform: scale(1.2);
+}
+#imgMap:hover {
+    transform: scale(1.5);
 }
 
 #map:hover {
@@ -449,43 +471,42 @@ footer a {
     width: 35vw;
 }
 
-.star:hover, .star-filled:hover{
-transform: scale(1.5);
+.star:hover,
+.star-filled:hover {
+    transform: scale(1.5);
 }
-
 .star {
-  fill: gray;
-  cursor: pointer;
+    fill: gray;
+    cursor: pointer;
 }
-
 .star-filled {
-  fill: gold;
+    fill: gold;
 }
 
-.star:hover, .star-filled:hover{
+.star:hover,
+.star-filled:hover {
     transform: scale(1.5);
 }
 
-.video{
+.video {
     /* fixed o absolute */
-   position: fixed; 
-   right: 0;
-   bottom: 0;
-   height: auto;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: auto;
     z-index: -1;
-   
+
 }
 
-#modalBody{
+#modalBody {
     background-color: #212529;
 }
-
-
-
-
-
-
-
+.footerS:hover {
+    transform: scale(1);
+}
+.footerS:hover {
+    transform: scale(1);
+}
 /* STATS SEBASTIAN */
 .noStyle:hover{
     transform: scale(1);
@@ -494,15 +515,16 @@ transform: scale(1.5);
     background: radial-gradient(circle, #ff0033, #212529);
 }
 
+
+
 .seccionesStats .card{
     color: white;
     background: radial-gradient(circle, #ff0033, #212529);
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
-
-
 }
-
-
+.contStats{
+    border-radius: 15px;
+}
 .contStats{
     border-radius: 15px;
 }
@@ -512,6 +534,7 @@ transform: scale(1.5);
     }
 
 .contStats img:hover{
+    cursor: pointer;
 transform: scale(1.2);
 }
 
@@ -529,20 +552,260 @@ transform: scale(1.2);
 
 .seccionesStats h5{
     font-size: xxx-large;
-
 }
 .numeral{
     color: rgba(255, 70, 85);
 }
+.contStats .card a{
+   font-size: x-large;
+}
+.contStats .card .boton1:hover{
+    transform: scale(1);
+}
+.contStats .card a{
+    font-size: 2vw;
+}
+/* styles agents, details agents and development team. */
+/*agents*/
+#card{
+    background: radial-gradient(circle,   #ff0033, #212529); 
+    /*  background: linear-gradient(to bottom, #c7f458ff, #d56324ff, #3a2656ff, #3a7233ff);
+*/
+     transition: transform 0.3s ease;
+     width: 18rem;    
+}
+#card:hover{
+    transform: scale(1.05);
+}
+.amImage:hover{
+    transform: scale(1.3);
+    filter: brightness(1.2);
+    
+}
+#agentImag {
+    object-position: center !important;
+    height: 50vh !important;
+    object-fit: cover !important;
+    
+  }
+.listaAgents{
+    display: flex;
+    justify-content: space-between;
+    background: radial-gradient(circle,   #ff0033, #212529); 
+           /*  background: linear-gradient(to bottom, #c7f458ff, #d56324ff, #3a2656ff, #3a7233ff);
+ */
+            transition: transform 0.3s ease;
+    color: #ffffff;
+   
+}
+.listaAgents{
+    padding: 2vh ;
+    text-align: center;
+    margin-top: 2vh;
+}
+.amMain{
+    padding: 5vh;
+   
+}
+#rowAgent{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5vh;
+}
+#rowModalAgent{
+    display: flex;
+    justify-content: space-around;
+}
+.alternativeImag{
+    position:absolute; 
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+    z-index: -1;
+    opacity: 0.85;
+}
+#carouselExample{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#carouselExample img {
+    width: 100%;
+    height: 40vh;
+    object-fit:cover;
+   object-position: center top;
+   opacity: 0.8;
+}
+.modal-favorite .amModal {
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+  }
+  .modal-favorite .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+  }
+  .modal-favorite .carousel-caption h1 {
+    color: white;
+  }
+  .amModalFooter{
+    display: flex;
+    justify-content: center;
+  }
+  #amCardFooter{
+    color: #ffffff;
+    text-align: center;
+  }
+/*Details Agents*/
 
+.card-center{
+    margin: 0 auto;
+    max-width: 10rem;
+    background-color: #1A242E;
+    text-align: center;
+}
+.agent-icon-container{
+    text-align: center;
+}
+.agent-icon{
+    display: inline-block;
+    height: auto;
+}
+.divider{
+    border-bottom:2px solid;
+    border-color: #dc3545;
+}
+.amMainDetails{
+    padding-bottom: 5vh;
+    overflow: hidden;
+}
+.agent-portrait{
+    position: relative;
+    width: 140%;
+    height: auto;
+    transform: translateY(100px); /* Ajusta según la necesidad */
+    opacity: 0;
+    transition: transform 3s ease, opacity 3s ease, background-color 0.3s ease;
+
+}
+.agent-portrait.loaded {
+    transform: translateY(0);
+    opacity: 1;
+    
+  }
+  .amCardAbility, .card-back{
+    /* background-color: #1A242E; */
+    background-color:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    
+    cursor: pointer;
+  }
+
+  .amCardAbility.active, .card-back{
+    transform: scale(1.1);
+    opacity: 1;
+    position: relative;
+    transform-style: preserve-3d;
+  transition: transform 0.6s;
+  }
+  .amCardAbility {
+    position: relative;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .amCardAbility:hover{
+    transform: scale(1.1);
+  }
+  .card-back {
+    position:absolute;
+    transform: rotateY(180deg) scaleX(-1);
+    top: 0;
+    left: 0;
+    background-color:rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.6s;
+    width: 16rem;
+    height: 17rem;
+    border-radius: 10px;
+    padding: 1vh;
+    /* color:mediumvioletred; */
+    color:black;
+    /* Ocultar inicialmente */
+  }
+  
+.amCardAbility.active .card-back {
+    display: block; 
+    transform: translateY(0);
+  }
+  
+  .card-back p{
+    font-size:13px;
+  }
+  .agent-portrait:hover{
+  
+    background-image: url('https://cdn.pixabay.com/photo/2017/09/14/11/17/water-2748670_1280.png');
+    background-size: 70%; /* Ajusta el tamaño de la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    transform: scale(1.1); /* Escala la imagen en hover */
+    opacity: 1;
+    filter: brightness(1.1);
+  }
+  .amBodyDetailsAgents{
+   /*  background-color: #1A242E;
+    background-image: url('https://media.valorant-api.com/playercards/3d3e270e-4c89-ea1f-2bea-32a40a21dd75/wideart.png');
+    background-repeat: no-repeat;
+    background-position:center-down;
+    background-size: 70%; */
+   /*  background: linear-gradient(to right, #FF0000, #00FF00, #0000FF);
+    height: 100vh;
+    margin: 0; */
+    /* background: linear-gradient(to right, #ff4655, #ff9a8b, #2c2f33); */
+    background: linear-gradient(to right, #8e44ad, #3498db, #2c3e50);
+  }
+  .agentCard{
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  .rowAbilities{
+    padding: 1.5vh 0 6vh 1.5vh;
+  }
+.rowAbilities h2{
+    padding: 2vh 0; 
+    text-align: center; 
+}
+#content-abilities{
+    display: flex;
+    justify-content: space-around;
+}
+.abilityCard{
+    width: 40vh;
+}
+.buttonFavorites{
+    margin-right: 2vh;
+}
+.seccionesStats h5{
+    font-size: xxx-large;
+}
+.numeral{
+    color: rgba(255, 70, 85);
+}
 .contStats .card a{
     font-size: x-large;
 
 }
-
 .contStats .card .boton1:hover{
     transform: scale(1);
-
 }
 
- 

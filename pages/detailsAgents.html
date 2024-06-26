@@ -7,146 +7,10 @@
     <link rel="icon" href="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt50870b13992cdf47/63b0d7d089f85210f400107e/val-logo-small.png">
     
     <link rel="stylesheet" href="/styles/styles.css">
-    <style>
-      .card-center {
-    margin: 0 auto;
-     }
-     .agent-icon-container {
-    text-align: center;
-}
-
-.agent-icon {
-    display: inline-block;
-    height: auto;
-}
-.divider {
-      border-bottom: 2px solid;
-      border-color:#DC3545 ; /* Puedes usar #dc3545 para el color danger de Bootstrap */
-    }
- 
-  main{
-    padding-bottom: 5vh;
-   
-   overflow: hidden;
-
-
-    
-  }
-  
-
-  .agent-portrait {
-  position: relative;
-  width: 100%;
-  height: auto;
-  transform: translateY(100px); /* Ajusta según la necesidad */
-  opacity: 0;
-  transition: transform 3s ease, opacity 3s ease, background-color 0.3s ease;
- 
-}
-
-.agent-portrait.loaded {
-  transform: translateY(0);
-  opacity: 1;
-}
-/* .card-container{
-  perspective: 1000px;
-} */
- 
- .h-100, .card-back{
-    background-color: #1A242E;
-   
-    cursor: pointer;
-  
-   
-  }
-  
-    .h-100.active, .card-back{
-    transform: scale(1.1);
-    opacity: 1;
-    position: relative;
-    transform-style: preserve-3d;
-  transition: transform 0.6s;
-   
-  }
-.h-100 {
-  position: relative;
-  cursor: pointer;
-  opacity: 0.9;
-}
-.h-100:hover{
-  transform: scale(1.1);
-}
-
-.card-back {
-  position:absolute;
-  transform: rotateY(180deg) scaleX(-1);
-  top: 0;
-  left: 0;
-  background-color:#DC3545;
-  
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.6s;
-  width: 16rem;
-  height: 17rem;
-  border:#1A242E 1px;
-  /* Ocultar inicialmente */
- 
- 
-}
-
-.h-100.active .card-back {
-  display: block; 
-  transform: translateY(0);
-  
-}
-.h-100.active{
-  transform: rotateY('180deg');
-}
-
-.card-back p{
-  font-size:15px;
-}
-
-
-
-
-
-.agent-portrait:hover{
-  
-  background-image: url('https://cdn.pixabay.com/photo/2017/09/14/11/17/water-2748670_1280.png');
-  background-size: 70%; /* Ajusta el tamaño de la imagen de fondo */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center; /* Centra la imagen */
-  transform: scale(1.1); /* Escala la imagen en hover */
-  
-}
-
-/* .navbar{
-   background: radial-gradient(circle,   #ff0033, #212529); 
-           
-            transition: transform 0.3s ease;
-} */
-
-/* .alternativeImag{
-    position:relative; 
-   right: 0;
-   bottom: 0;
-   width: 100%;
-   height: 100%;
-    z-index: -1;
-    opacity: 0.85;
-} */
-
-  
-
-    </style>
-    <title></title>
+    <title >Default Title</title>
 </head>
-<body id="app" style="background-color: #1A242E;">
+<body id="app" class="amBodyDetailsAgents">
+  
     <header>
       <nav class="navbar navbar-expand-sm bg-dark mb-5">
         <div class="container-fluid justify-content-between">
@@ -185,7 +49,7 @@
                   <ul class="dropdown-menu bg-dark">
                     <li><a class="dropdown-item" href="/pages/info.html">General information</a></li>
                     <li><a class="dropdown-item" href="/pages/agents.html">Agents</a></li>
-                    <li><a class="dropdown-item" href="/pages/gameModes.html">Weapons</a></li>
+                    <li><a class="dropdown-item" href="/pages/weapons.html">Weapons</a></li>
                     <li><a class="dropdown-item" href="/pages/maps.html">Maps</a></li>
                   </ul>
                 </li>
@@ -201,17 +65,17 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="amMainDetails">
         <div v-if="agentDetail" class="container my-5">
           
             <div class="row align-items-center">
               
-                <div  class="col-md-6"  style="display: flex; justify-content: center;">
+                <div  class="col-md-6 agentCard"  >
                   <!-- <div class="background" :style="{ backgroundImage: `url(${agentDetail.background})` }"></div>
                     -->
                     <!-- <img class="card-img-top alternativeImag" :src="agentDetail.background" alt="" height="250vh" width="45vh"> -->
                     <div> 
-                      <img id="image" class="agent-portrait"  :src="agentDetail.fullPortrait"  alt="Agent Portrait" style="height: auto; width: 140%;">
+                      <img id="image" class="agent-portrait"  :src="agentDetail.fullPortrait"  alt="Agent Portrait" >
                     </div>
                 </div>
                      
@@ -227,7 +91,7 @@
                       
                       <h2>{{ agentDetail.displayName }}</h2>
                       <p>{{ agentDetail.description }}</p>
-                      <div v-if="agentDetail.role" class="card border-danger mb-3 card-center" style="max-width: 10rem;background-color:#1A242E ; text-align: center;">
+                      <div v-if="agentDetail.role" class="card mb-3 card-center" >
                           <div class="card-header ">
                             <img :src="agentDetail.role.displayIcon" alt="">                 
                           </div>
@@ -248,17 +112,17 @@
               </div>
 
               <!-- abilities-->
-              <div class="row align-items-center text-light" style="padding: 1.5vh 0 6vh  1.5vh;">
-                <h2 style="padding: 2vh 0; text-align: center;">SPECIAL ABILITIES</h2>
-                <div class="row row-cols-4 row-cols-md-4 g-4" style="display: flex; justify-content: space-around;">
-                  <div class="col" v-for="(ability, index) in agentDetail.abilities" :key="index" style="width: 40vh;">
-                    <div class="card h-100 " :class="{ active: selectAbilityIndex === index }" @click="toggleCard(index)">
+              <div class="row align-items-center text-light rowAbilities" >
+                <h2 >SPECIAL ABILITIES</h2>
+                <div id="content-abilities" class="row row-cols-4 row-cols-md-4 g-4" >
+                  <div class="col abilityCard" v-for="(ability, index) in agentDetail.abilities" :key="index" >
+                    <div class="card h-100 amCardAbility" :class="{ active: selectAbilityIndex === index }" @click="toggleCard(index)">
                       <div class="card-front">
                         <img :src="ability.displayIcon" class="card-img-top" alt="...">
                       </div>
-                      <div class="card-back text-light " v-if="selectAbilityIndex === index">
+                      <div class="card-back " v-if="selectAbilityIndex === index">
                         <h3>{{ ability.displayName }}</h3>
-                        <p>{{ ability.description }}</p>
+                        <h7>{{ ability.description }}</h7>
                       </div>
                     </div>
                   </div>
@@ -270,15 +134,6 @@
             
             
         </div>
-            
-           
-              
-            
-                
-              
-  
-        
-        
     </main>
     
     
@@ -326,7 +181,7 @@
             <div class="card-body">
                 <!--RioGames-->
                 <a href="https://www.riotgames.com/es">
-                   <img class="imageRiot" style="width: 10vh;" src="/images/riotGames.png" alt="">
+                   <img class="imageRiot" width="110" src="/images/riotGames.png" alt="">
                 </a>
                 
                 <img src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt50870b13992cdf47/63b0d7d089f85210f400107e/val-logo-small.png?&amp;height=75&amp;disable=upscale" alt="val-logo">

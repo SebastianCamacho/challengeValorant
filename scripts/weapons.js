@@ -19,15 +19,8 @@ const app = createApp({
                 .then(response => response.json())
                 .then(data => {
                     this.weapons = data.data
-                    this.weaponsBk = data.data.filter(gun => {
-                        gun.skins.filter()
-                        
-                    })
+                    this.weaponsBk = data.data
                     this.categories = Array.from(new Set(this.weapons.map((weapon) => this.extractCategoryName(weapon.category))))
-                    console.log(this.weapons);
-                    console.log(this.categories);
-                    // this.weaponBk = weapon.filter(gun => gun.displayIcon)
-                    console.log(this.weaponsBk);
                 })
         },
         extractCategoryName(category) {
