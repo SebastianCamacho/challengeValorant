@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-sm bg-dark mb-5">
+    <nav class="navbar navbar-expand-sm bg-dark">
       <div class="container-fluid justify-content-between">
         <div class="col-10 col-sm-3">
           <a class="navbar-brand" href="/index.html">
@@ -67,12 +67,11 @@
         </button>
         <div>
           <ul class="dropdown-menu">
-            <li v-for="categorie in categories" :key="categorie">
-              <a class="dropdown-item">
+            <li v-for="categorie in categories">
+              <a class="dropdown-item catLetter">
                 <input v-model="selectedCategories" type="checkbox" :value="categorie"> {{categorie}}
               </a>
             </li>
-            <br>
           </ul>
         </div>
         <input id="inputWeaponBg" v-model="searchText" type="search" class="form-control"
@@ -83,17 +82,19 @@
         <div v-if="weapons.length == 0" id="textFound" class="custom-text-found">
           <h2>NO Weapons found</h2>
         </div>
+
         <div v-for="weapon in weapons" class="col custom-card-container">
-          <div class="card h-100 text-center custom-card ">
+          <div id="normalizer" class="card h-100 text-center custom-card ">
             <div class="custom-card-img-container">
               <a :href="`./detailsWeapons.html?uuid=${weapon.uuid}`"> <img :src="weapon.displayIcon"
-                  class="card-img-top mt-5 custom-card-img" alt=""></a>
+                  class="mt-5 custom-card-img" alt=""></a>
             </div>
             <div class="custom-card-footer">
               <a :href="`./detailsWeapons.html?uuid=${weapon.uuid}`" class="btn custom-btn">{{weapon.displayName}}</a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
