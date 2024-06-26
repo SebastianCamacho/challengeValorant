@@ -27,7 +27,7 @@ createApp({
                 .then(data => {
                     this.weapon = data.data;
                     // Filtrar skins que no sean null
-                    this.weapon.skins = this.weapon.skins.filter(skin => skin !== null);
+                    this.weapon.skins = this.weapon.skins.filter(skin => skin.displayIcon !== null);
                 })
                 .catch(error => {
                     console.error('Error fetching weapon details:', error);
@@ -50,7 +50,7 @@ createApp({
             const parts = category.split('::');
             return parts.length > 1 ? parts[1] : category;
         },
-
+        
 
     }
 }).mount('#appWeaponDetails');

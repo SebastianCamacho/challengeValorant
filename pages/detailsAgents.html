@@ -115,14 +115,14 @@
               <div class="row align-items-center text-light rowAbilities" >
                 <h2 >SPECIAL ABILITIES</h2>
                 <div id="content-abilities" class="row row-cols-4 row-cols-md-4 g-4" >
-                  <div class="col abilityCard" v-for="(ability, index) in agentDetail.abilities" :key="index" >
+                  <div class="col abilityCard"  v-for="(ability, index) in agentDetail.abilities" :key="index" >
                     <div class="card h-100 amCardAbility" :class="{ active: selectAbilityIndex === index }" @click="toggleCard(index)">
                       <div class="card-front">
-                        <img :src="ability.displayIcon" class="card-img-top" alt="...">
+                        <img :src="ability.displayIcon || defaultIcon" class="card-img-top" alt="...">
                       </div>
                       <div class="card-back " v-if="selectAbilityIndex === index">
                         <h3>{{ ability.displayName }}</h3>
-                        <h7>{{ ability.description }}</h7>
+                        <h6>{{ ability.description }}</h6>
                       </div>
                     </div>
                   </div>
