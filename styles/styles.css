@@ -808,4 +808,59 @@ transform: scale(1.2);
 .contStats .card .boton1:hover{
     transform: scale(1);
 }
+/*footer*/
+.footer-card {
+    background-color: black;
+    width: 100%;
+}
+
+.footer-header {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.footer-header a svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    margin: 0 10px;
+}
+
+.footer-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-image-riot {
+    width: 10vh;
+    margin-bottom: 10px;
+}
+
+.footer-image-val {
+    height: 75px;
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    margin: 10px 0;
+    color: white;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    color: white;
+}
+
+.footer-footer {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-footer a img {
+    height: 100px;
+}
+
 
