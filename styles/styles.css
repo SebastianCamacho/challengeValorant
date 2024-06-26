@@ -329,9 +329,18 @@ footer a {
 #map:hover {
     transform: scale(1.2);
 }
+<<<<<<< HEAD
 #imgMapDetail{
     width: 35vw;
 }
+=======
+
+
+#imgMapDetail{
+    width: 35vw;
+}
+
+>>>>>>> fc060ab0c45ad6075f8bc87dddd75fa4cb7ae7d8
 .star:hover, .star-filled:hover{
 transform: scale(1.5);
 }
@@ -356,9 +365,17 @@ transform: scale(1.5);
 #modalBody{
     background-color: #212529;
 }
+<<<<<<< HEAD
 .footerS:hover {
     transform: scale(1);
 }
+=======
+
+.footerS:hover {
+    transform: scale(1);
+}
+
+>>>>>>> fc060ab0c45ad6075f8bc87dddd75fa4cb7ae7d8
 /* STATS SEBASTIAN */
 .noStyle:hover{
     transform: scale(1);
@@ -366,6 +383,10 @@ transform: scale(1.5);
 .tituloStats{
     background: radial-gradient(circle, #ff0033, #212529);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fc060ab0c45ad6075f8bc87dddd75fa4cb7ae7d8
 .seccionesStats .card{
     color: white;
     background: radial-gradient(circle, #ff0033, #212529);
@@ -374,6 +395,12 @@ transform: scale(1.5);
 .contStats{
     border-radius: 15px;
 }
+<<<<<<< HEAD
+=======
+.contStats{
+    border-radius: 15px;
+}
+>>>>>>> fc060ab0c45ad6075f8bc87dddd75fa4cb7ae7d8
 .contStats .card:hover{
     transform: scale(1.05);
     }
@@ -394,6 +421,7 @@ transform: scale(1.2);
     color: white;
 }
 
+<<<<<<< HEAD
 .seccionesStats h5{
     font-size: xxx-large;
 
@@ -413,6 +441,11 @@ transform: scale(1.2);
 }
 
 
+=======
+.contStats .card a{
+    font-size: 2vw;
+}
+>>>>>>> fc060ab0c45ad6075f8bc87dddd75fa4cb7ae7d8
 /* styles agents, details agents and development team. */
 /*agents*/
 #card{
@@ -588,9 +621,6 @@ transform: scale(1.2);
     padding: 1vh;
     /* color:mediumvioletred; */
     color:black;
-    
-    
-    
     /* Ocultar inicialmente */
   }
   
@@ -623,9 +653,6 @@ transform: scale(1.2);
     margin: 0; */
     /* background: linear-gradient(to right, #ff4655, #ff9a8b, #2c2f33); */
     background: linear-gradient(to right, #8e44ad, #3498db, #2c3e50);
-   
- 
-    
   }
   .agentCard{
     display: flex;
@@ -648,5 +675,18 @@ transform: scale(1.2);
 }
 .buttonFavorites{
     margin-right: 2vh;
+}
+.seccionesStats h5{
+    font-size: xxx-large;
+}
+.numeral{
+    color: rgba(255, 70, 85);
+}
+.contStats .card a{
+    font-size: x-large;
+
+}
+.contStats .card .boton1:hover{
+    transform: scale(1);
 }
 
