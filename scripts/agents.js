@@ -15,7 +15,8 @@ const app= createApp({
             agentDetail:{abilities: []},
             selectAbilityIndex:null,
             imageLoaded: false,
-            imageClicked: false
+            imageClicked: false,
+            defaultIcon:'https://media.valorant-api.com/themes/b88f012b-4623-e192-26fb-1ab23051bd17/displayicon.png'
         }
     },
     created(){
