@@ -47,14 +47,16 @@ const app = createApp({
   },
 
   created() {
-    fetch(urlAgents).then(Response=>Response.json()).then(data => {
-      console.log(data);
-      this.apiValorant = data.data
-    })
+   this.pullDataAgents(urlAgents)
   },
 
   methods: {
-    
+    pullDataAgents(url){
+      fetch(url).then(Response=>Response.json()).then(data => {
+        console.log(data);
+        this.apiValorant = data.data
+      })
+    }
   },
 
   computed: {
