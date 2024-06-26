@@ -3,29 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 #main {
     font-family: 'Karantina', sans-serif;
 }
 #mainStats{
     font-family: 'Karantina', sans-serif;
 }
-
 /* NAVBAR */
 .nav-link,
 .dropdown-item {
     color: white;
 }
-
 .nav-link:hover,
 .dropdown-item:hover {
     color: #FF0000;
 }
-
 .seccionAgentes {
     background-color: #FF4655;
 }
-
 
 /* ABANICO DE IMAGENES */
 .image-container {
@@ -34,7 +29,6 @@
     align-items: center;
     height: 60vh;
 }
-
 .image-card {
     flex: 1;
     transition: flex 0.3s ease, z-index 0.3s ease;
@@ -43,31 +37,25 @@
     overflow: hidden;
     position: relative;
 }
-
 .image-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
-
 /* Tamaños proporcionales */
 .image-card:nth-child(1) {
     flex: 1.2;
     /* Más pequeño */
     left: 10%;
     z-index: 1;
-
 }
-
 .image-card:nth-child(2) {
     flex: 1.5;
     /* Mediano */
     left: 5%;
     z-index: 2;
-
 }
-
 .image-card:nth-child(3) {
     flex: 1.7;
     /* Más grande */
@@ -86,10 +74,9 @@
     right: 10%;
     z-index: 1;
 }
-
 /* Efecto hover */
 .image-card:hover {
-    flex: 3;
+    flex: 2;
     /* Se expande más */
     z-index: 4;
 }
@@ -99,30 +86,26 @@
 .h2 {
     font-size: 8vw;
 }
-
 .boton1 {
     background: linear-gradient(45deg, #FF3844, #FF7562);
     font-size: 4vw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .boton1:hover {
     background: linear-gradient(45deg, #ff4e4e, #FF7562);
     transform: scale(1.1);
 }
-
 .seccionMapas img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
-
+footer .card{
+    border-radius: 0;
+}
 footer a {
     padding-right: 1.5vh;
 }
-
-
-
 /* Responsividad */
 @media (max-width: 768px) {
     .image-container {
@@ -139,7 +122,6 @@ footer a {
         font-size: 11vh;
     }
 }
-
 @media (max-width: 480px) {
     .image-container {
         height: 30vh;
@@ -155,42 +137,31 @@ footer a {
     }
 }
 
-
-
 /*---------------------- GENRALS STYLES MY BOOK JHEESFRI-------------------*/
-
 /* Fuentes/Estilos De Letras*/
 .f_f_times {
     font-family: 'Times New Roman', Times, serif;
 }
-
 .f_f_arial {
     font-family: Arial, Helvetica, sans-serif;
 }
-
 /* Colors */
-
 .col_white {
     color: white;
 }
-
 /* Background  */
-
 .bg_color_valorant {
     background-color: #FF4655;
 }
-
 .bg_black_transparent_1 {
     background-color: rgba(0, 0, 0, 0.1);
 }
 .bg_black_transparent_3 {
     background-color: rgba(0, 0, 0, 0.3);
 }
-
 .bg_black_transparent_8 {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 .bg_valorant { 
     margin: 0;
     padding: 0;
@@ -200,9 +171,7 @@ footer a {
     /* Ajusta la imagen de fondo para cubrir todo el área */
     background-attachment: fixed;
 }
-
 /*Page InfoHtml*/
-
 .fatherInfo:hover{
     border: #FF0000 solid 1px;
 }
@@ -210,7 +179,6 @@ footer a {
     border: none;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
     transition: transform 0.2s, box-shadow 0.2s;
 }
 .custom-card .card:hover {
@@ -220,7 +188,6 @@ footer a {
 .custom-card .card:active {
     transform: scale(0.95);
 }
-
 .custom-card .card-img-top {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -247,11 +214,9 @@ footer a {
 #textFound{
     text-align: center;
     width: 100%;
-
 }
 /* mauricio yepes css*/
 .background-weapons{
-    border: solid 2px rgb(0, 255, 106);
     background: url('/images/backgroundWeapons.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
@@ -351,9 +316,7 @@ footer a {
     max-height: 20vw;
     object-fit: cover;
 }
-
 /* Estilos de mapas */
-
 .map{
     background: radial-gradient(circle,   #00ff22, #212529);          
 }
@@ -361,10 +324,13 @@ footer a {
     background-color: #1A242E;
 }
 #imgMap:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 #map:hover {
     transform: scale(1.2);
+}
+#imgMapDetail{
+    width: 35vw;
 }
 .star:hover, .star-filled:hover{
 transform: scale(1.5);
@@ -393,24 +359,59 @@ transform: scale(1.5);
 .footerS:hover {
     transform: scale(1);
 }
-
 /* STATS SEBASTIAN */
 .noStyle:hover{
     transform: scale(1);
     }
 .tituloStats{
-    background-color: rgba(255, 70, 85, 0.5);
+    background: radial-gradient(circle, #ff0033, #212529);
+}
+.seccionesStats .card{
+    color: white;
+    background: radial-gradient(circle, #ff0033, #212529);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 .contStats{
     border-radius: 15px;
 }
+.contStats .card:hover{
+    transform: scale(1.05);
+    }
+
+.contStats img:hover{
+transform: scale(1.2);
+}
+
 .seccionesStats{
     background-color: rgba(255, 255, 255, 0.1);
+}
+.seccionesStats ul{
+    font-size: x-large;
+    margin-bottom: 2vh;
+}
+.seccionesStats li{
+    background: transparent;
+    color: white;
+}
+
+.seccionesStats h5{
+    font-size: xxx-large;
 
 }
-.contStats .card a{
-    font-size: 2vw;
+.numeral{
+    color: rgba(255, 70, 85);
 }
+
+.contStats .card a{
+    font-size: x-large;
+
+}
+
+.contStats .card .boton1:hover{
+    transform: scale(1);
+
+}
+
 
 /* styles agents, details agents and development team. */
 /*agents*/
