@@ -10,22 +10,14 @@ const app2 = createApp({
       topFast: [],
       topEquip: [],
       topFireRate: [],
-      topHeadDamage: [],
-      topBodyDamage: [],
-      topRange: [],
       topLowerCost: [],
       topHigherCost: [],
       fastestArray: [],
       bestEquipArray: [],
       bestFireRate: [],
-      bestHeadDamage: [],
-      bestBodyDamage: [],
-      bestRange: [],
       lowerCost: [],
       higherCost: [],
       Tops: [],
-      shortRange: [],
-      mediumRange: [],
       damages: [],
     };
   },
@@ -130,67 +122,6 @@ const app2 = createApp({
       this.Tops.push(objetoTop3);
       return this.topFireRate;
     },
-    // no usada
-    headDamage() {
-      this.headDamageArray = this.weaponsBK.sort((a, b) => {
-        if (
-          a.weaponStats &&
-          b.weaponStats &&
-          typeof a.weaponStats.damageRanges.headDamage === "number" &&
-          typeof b.weaponStats.damageRanges.headDamage === "number"
-        ) {
-          return (
-            b.weaponStats.damageRanges.headDamage -
-            a.weaponStats.damageRanges.headDamage
-          );
-        } else {
-          return 0;
-        }
-      });
-      this.topHeadDamage = this.headDamageArray.slice(0, 3);
-      return this.topHeadDamage;
-    },
-    // no usada
-    bodyDamage() {
-      this.bodyDamageArray = this.weaponsBK.sort((a, b) => {
-        if (
-          a.weaponStats &&
-          b.weaponStats &&
-          typeof a.weaponStats.damageRanges.bodyDamage === "number" &&
-          typeof b.weaponStats.damageRanges.bodyDamage === "number"
-        ) {
-          return (
-            a.weaponStats.damageRanges.bodyDamage -
-            a.weaponStats.damageRanges.bodyDamage
-          );
-        } else {
-          return 0;
-        }
-      });
-      this.topBodyDamage = this.bodyDamageArray.slice(0, 3);
-      let objetoTop3 = {};
-      return this.topBodyDamage;
-    },
-    // no usada
-    range() {
-      this.rangeArray = this.weaponsBK.sort((a, b) => {
-        if (
-          a.weaponStats &&
-          b.weaponStats &&
-          typeof a.weaponStats.damageRanges.rangeStartMeters === "number" &&
-          typeof b.weaponStats.damageRanges.rangeStartMeters === "number"
-        ) {
-          return (
-            b.weaponStats.damageRanges.rangeStartMeters -
-            a.weaponStats.damageRanges.rangeStartMeters
-          );
-        } else {
-          return 0;
-        }
-      });
-      this.topRange = this.rangeArray.slice(0, 3);
-      return this.topRange;
-    },
     calculateLowerCost() {
       this.lowerCost = this.weaponsBK.slice().sort((a, b) => {
         if (
@@ -231,7 +162,6 @@ const app2 = createApp({
       this.Tops.push(objetoTop3);
       return this.topHigherCost;
     },
-
     extrarRangos() {
       let weaponsAux = [...this.weapons];
       let rangos = [];
