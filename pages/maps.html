@@ -85,7 +85,7 @@
     </div>
     <div id="maps" class="row m-3 justify-content-evenly">
       <div id="map" v-for="map in maps" class="map card col-6 col-md-3 p-3 m-3">
-        <a :href="'details.html?value='+map.uuid" class="btn">
+        <a :href="'detailsMaps.html?value='+ map.uuid" class="btn">
           <img id="imgMap" :src="map.splash" class="card-img-top bg-dark" alt="map">
         </a>
         <div class="card-body">

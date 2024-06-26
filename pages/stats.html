@@ -14,10 +14,10 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
     <title>Stats</title>
   </head>
-  <body id="app">
+  <body id="app2">
     <header>
       <nav class="navbar navbar-expand-sm bg-dark">
         <div class="container-fluid justify-content-between">
@@ -88,240 +88,60 @@
         </div>
       </nav>
     </header>
-
-    <main id="mainStats">
-      <div class="row justify-content-center my-3">
-        <div class="col-10 p-2 contStats">
+    <main id="mainStats" class="background-weapons">
+      <!-- CADA UNA DE LAS SECCIONES -->
+      <div
+        v-for="(t,index) in Tops"
+        :key="index"
+        class="row justify-content-center g-0 py-3"
+      >
+        <div class="col-12 col-md-10 py-2 contStats">
+          <!-- TIUTLOS DE SECCIONES -->
           <div class="row g-0 justify-content-between tituloStats">
             <div class="col text-center">
-              <h2>
-                MOST DAMAGE
-              </h2>
+              <h2>TOP 3 {{t.name}}</h2>
             </div>
           </div>
-          <div class="row g-0 seccionesStats my-2">
-            <!-- SECCIONES -->
-            <div class="col-12 py-3">
-              <!-- TITULO DE CATEGORIA -->
-              <div class="row  tituloCatStats">
-                <div class="col ps-5">
-                  <h2>
-                    TOP 3
-                  </h2>
+          <!-- TOP-3 -->
+          <div class="row justify-content-evenly my-2 py-2 g-0 seccionesStats">
+            <div
+              v-for="(w,index) in t.top"
+              :key="index"
+              class="col-10 col-sm-5 col-md-4 col-lg-3 mb-2 g-md-2"
+            >
+              <div class="card p-2 h-100 justify-content-end">
+                <img :src="w.displayIcon" alt="..." />
+
+                <div class="card-body d-flex flex-column justify-content-end">
+                  <h5 class="card-title ">
+                    <strong class="numeral">#{{index+1}}</strong>
+                    {{w.displayName}}
+                  </h5>
                 </div>
-              </div>
-              <!-- TOP-3 -->
-              <div class="row justify-content-around g-0 armasStats ">
-                <div class="col-3">
-                  <div class="card noStyle">
-                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/377c8a9058a364478ed179ccbe41a68dd2255234-680x383.png?auto=format&fit=fill&q=80&w=387" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Name Weapon</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Caracteristica 1</li>
-                      <li class="list-group-item">caracteristica 2</li>
-                      <li class="list-group-item">caracteristica 3</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="btn boton1 text-white">Detalles</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="card noStyle">
-                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/377c8a9058a364478ed179ccbe41a68dd2255234-680x383.png?auto=format&fit=fill&q=80&w=387" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Nombre del arma</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Caracteristica 1</li>
-                      <li class="list-group-item">caracteristica 2</li>
-                      <li class="list-group-item">caracteristica 3</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="btn boton1 text-white">Detalles</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="card noStyle">
-                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/377c8a9058a364478ed179ccbe41a68dd2255234-680x383.png?auto=format&fit=fill&q=80&w=387" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Nombre del arma</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Caracteristica 1</li>
-                      <li class="list-group-item">caracteristica 2</li>
-                      <li class="list-group-item">caracteristica 3</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="btn boton1 text-white">Detalles</a>
-                    </div>
-                  </div>
-                </div>
-                
+                <ul v-if="t.name=='Most Fast Reload'" class="list-group list-group-flush">
+                  <li class="list-group-item">Time Reload (seconds): {{w.weaponStats.reloadTimeSeconds}}</li>
+                </ul>
+                <ul v-if="t.name=='Faster equipment time'" class="list-group list-group-flush">
+                  <li class="list-group-item">Time Equipaments (seconds): {{w.weaponStats.equipTimeSeconds}} </li>
+                </ul>
+                <ul v-if="t.name=='Best Fire Rate'" class="list-group list-group-flush">
+                  <li class="list-group-item">Fire Rate (b/s): {{w.weaponStats.fireRate}} </li>
+                </ul>
+                <ul v-if="t.name=='Most Lower Cost'" class="list-group list-group-flush">
+                  <li class="list-group-item">Cost ($): {{w.shopData.cost}} </li>
+                </ul>
+                <ul v-if="t.name=='Most Hegher Cost'" class="list-group list-group-flush">
+                  <li class="list-group-item">Cost ($): {{w.shopData.cost}} </li>
+                </ul>
+          
+                <a
+                  :href="`./detailsWeapons.html?uuid=${w.uuid}`"
+                  class="btn boton1 text-white align-self-center"
+                  >Detalles</a
+                >
               </div>
             </div>
-
           </div>
-
-        </div>
-      </div>
-      <div class="row justify-content-center my-3">
-        <div class="col-10 p-2 contStats">
-          <div class="row g-0 justify-content-between tituloStats">
-            <div class="col text-center">
-              <h2>
-                MOST FIRE RATE
-              </h2>
-            </div>
-          </div>
-          <div class="row g-0 seccionesStats my-2">
-            <!-- SECCIONES -->
-            <div class="col-12 py-3">
-              <!-- TITULO DE CATEGORIA -->
-              <div class="row  tituloCatStats">
-                <div class="col ps-5">
-                  <h2>
-                    TOP 3
-                  </h2>
-                </div>
-              </div>
-              <!-- TOP-3 -->
-              <div class="row justify-content-around g-0 armasStats ">
-                <div class="col-3">
-                  <div class="card noStyle">
-                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/377c8a9058a364478ed179ccbe41a68dd2255234-680x383.png?auto=format&fit=fill&q=80&w=387" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Name Weapon</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Caracteristica 1</li>
-                      <li class="list-group-item">caracteristica 2</li>
-                      <li class="list-group-item">caracteristica 3</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="btn boton1 text-white">Detalles</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="card noStyle">
-                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/377c8a9058a364478ed179ccbe41a68dd2255234-680x383.png?auto=format&fit=fill&q=80&w=387" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Nombre del arma</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Caracteristica 1</li>
-                      <li class="list-group-item">caracteristica 2</li>
-                      <li class="list-group-item">caracteristica 3</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="btn boton1 text-white">Detalles</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="card noStyle">
-                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/377c8a9058a364478ed179ccbe41a68dd2255234-680x383.png?auto=format&fit=fill&q=80&w=387" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Nombre del arma</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Caracteristica 1</li>
-                      <li class="list-group-item">caracteristica 2</li>
-                      <li class="list-group-item">caracteristica 3</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="btn boton1 text-white">Detalles</a>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-      <div class="row justify-content-center my-3">
-        <div class="col-10 p-2 contStats">
-          <div class="row g-0 justify-content-between tituloStats">
-            <div class="col text-center">
-              <h2>
-                MOST FAST RELOAD
-              </h2>
-            </div>
-          </div>
-          <div class="row g-0 seccionesStats my-2">
-            <!-- SECCIONES -->
-            <div class="col-12 py-3">
-              <!-- TITULO DE CATEGORIA -->
-              <div class="row  tituloCatStats">
-                <div class="col ps-5">
-                  <h2>
-                    TOP 3
-                  </h2>
-                </div>
-              </div>
-              <!-- TOP-3 -->
-              <div class="row justify-content-around g-0 armasStats ">
-                <div class="col-3">
-                  <div class="card noStyle">
-                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/377c8a9058a364478ed179ccbe41a68dd2255234-680x383.png?auto=format&fit=fill&q=80&w=387" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Name Weapon</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Caracteristica 1</li>
-                      <li class="list-group-item">caracteristica 2</li>
-                      <li class="list-group-item">caracteristica 3</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="btn boton1 text-white">Detalles</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="card noStyle">
-                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/377c8a9058a364478ed179ccbe41a68dd2255234-680x383.png?auto=format&fit=fill&q=80&w=387" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Nombre del arma</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Caracteristica 1</li>
-                      <li class="list-group-item">caracteristica 2</li>
-                      <li class="list-group-item">caracteristica 3</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="btn boton1 text-white">Detalles</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="card noStyle">
-                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/377c8a9058a364478ed179ccbe41a68dd2255234-680x383.png?auto=format&fit=fill&q=80&w=387" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Nombre del arma</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Caracteristica 1</li>
-                      <li class="list-group-item">caracteristica 2</li>
-                      <li class="list-group-item">caracteristica 3</li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="#" class="btn boton1 text-white">Detalles</a>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-
-          </div>
-
         </div>
       </div>
     </main>
