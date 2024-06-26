@@ -5,6 +5,8 @@ console.log(urlGameModes)
 const urlGamesModes = "https://valorant-api.com/v1/gamemodes"
 const urlGamesModesEquippables = "https://valorant-api.com/v1/gamemodes/equippables"
 const urlThemes = "https://valorant-api.com/v1/themes"
+const urlEvents = "https://valorant-api.com/v1/events"
+const urlcompetitive = "https://valorant-api.com/v1/competitivetiers"
 
 const { createApp } = Vue
 
@@ -55,13 +57,14 @@ const app = createApp({
         },
       ],
       gameModesEquipables: [],
-      themes: []
+      themes: [],
+      events: []
     }
   },
   created() {
     this.pullDataGamesModes(urlGamesModes)
-    this.pullDataGamesModesEquippables(urlGamesModesEquippables)
-    this.pullData(urlThemes)
+    this.pullDataGamesModesEvents(urlcompetitive)
+    this.pullDataGameModesThemes(urlThemes)
   },
   methods: {
     pullDataGamesModes(url) {
@@ -69,12 +72,13 @@ const app = createApp({
         this.gameModes = data.data
       })
     },
-    pullDataGamesModesEquippables(url) {
+    pullDataGamesModesEvents(url) {
       fetch(url).then(Response => Response.json()).then(data => {
-        this.gameModesEquipables = data.data
+        this.events = data.data
+        console.log(this.events);
       })
     },
-    pullData(url){
+    pullDataGameModesThemes(url){
       fetch(url).then(Response=>Response.json()).then(data => {
         console.log(data);
         this.themes = data.data

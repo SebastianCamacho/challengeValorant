@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="icon"
         href="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt50870b13992cdf47/63b0d7d089f85210f400107e/val-logo-small.png">
+    <link rel="icon"
+        href="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt50870b13992cdf47/63b0d7d089f85210f400107e/val-logo-small.png">
 </head>
 
 <body id="bodyGM" class="bg_valorant">
@@ -39,7 +41,7 @@
                                 <ul class="dropdown-menu bg-dark">
                                     <li><a class="dropdown-item" href="/pages/info.html">General information</a></li>
                                     <li><a class="dropdown-item" href="/pages/agents.html">Agents</a></li>
-                                    <li><a class="dropdown-item" href="/pages/weapons.html">Arsenal</a></li>
+                                    <li><a class="dropdown-item" href="/pages/weapons.html">Weapons</a></li>
                                     <li><a class="dropdown-item" href="/pages/maps.html">Maps</a></li>
                                 </ul>
                             </li>
@@ -59,45 +61,42 @@
         <!-- general content -->
 
         <!-- carousel 1 gameModes-->
-        <div class="d-flex m-5 p-5 rounded">
+        <div class="d-flex mx-5 p-5 rounded justify-content-center">
             <div id="containerFatherGameModes" class="d-flex justify-content-center">
-                <div id="carouselExampleCaptions" class="bg_color_valorant carousel slide m-5 p-5 rounded ">
+                <div id="carouselExampleCaptions" class="bg_black_transparent_5 carousel slide m-5 p-2 rounded w_75vw">
                     <div class="carousel-indicators">
                         <!-- buttons end -->
                         <button v-for="(mode, index) in gameModes" type="button"
                             data-bs-target="#carouselExampleCaptions" :data-bs-slide-to="index"
                             :class="{ active: index === 0 }" :aria-current="{ true: index === 0 }"
-                            :aria-label="index + 1" class="d-none">ç
+                            :aria-label="index + 1" class="d-none">
 
                         </button>
                     </div>
                     <div class="carousel-inner">
                         <div v-for="(mode, index) in gameModes" :class="['carousel-item', { active: index === 0 }]">
-                            <div class="d-flex">
-                                <div>
-                                    <!-- Image game mode -->
-                                    <img :src="mode.listViewIconTall ? mode.listViewIconTall : 'https://pbs.twimg.com/media/Fv9p18LWYAAd2t_.png'"
-                                        class="rounded-3 d-block object-fit-cover rounded" :alt="mode.displayName"
-                                        style="width: 25vw; height: 60vh;">
-                                </div>
-                                <div class="d-flex justify-content-center">
-                                    <!-- Icon game mode -->
-                                    <img :src="mode.displayIcon ? mode.displayIcon : 'https://media.valorant-api.com/gamemodes/a8790ec5-4237-f2f0-e93b-08a8e89865b2/displayicon.png'"
-                                        class="rounded-3 d-block object-fit-scale rounded" :alt="mode.displayName"
-                                        style="width: 25vw; height: 60vh;">
-                                </div>
-                                <div style="width: 35%; height: 60vh;" class="d-flex justify-content-center">
-                                    <div class="text-center d-flex flex-column justify-content-center">
-                                        <!-- description game mode -->
-                                        <h3 class="mt-4 f_f_times w-75">{{gameModesDetails[index].name}}</h3>
-                                        <p class="p mt-4 f_f_arial w-75">{{gameModesDetails[index].description}}</p>
+                            <div class=" d-flex flex-column">
+                                <div class="d-flex flex-column justify-content-around align-items-center">
+                                    <div class="d-flex justify-content-center">
+                                        <!-- Image game mode -->
+                                        <img :src="mode.listViewIconTall ? mode.listViewIconTall : 'https://pbs.twimg.com/media/Fv9p18LWYAAd2t_.png'"
+                                            class="object-fit-cover rounded" :alt="mode.displayName"
+                                            style="width: 100%; height: 60vh;">
                                     </div>
                                 </div>
-
-                                <div class="carousel-caption d-none d-md-block h-100">
-                                    <!-- Name game mode -->
-                                    <h5 class="fs-1 f_f_times">Mode: {{mode.displayName}}</h5>
-
+                                <div class="d-flex justify-content-center">
+                                    <div class="d-flex flex-column justify-content-center align-items-center w-100">
+                                        <!-- description game mode -->
+                                        <h3 class="mt-4 f_f_times col_white text-center">{{gameModesDetails[index].name}}</h3>
+                                        <p class="p mt-4 f_f_arial col_white">{{gameModesDetails[index].description}}</p>
+                                        <a role="button" aria-label="JUEGA GRATIS" href="https://playvalorant.com/es-mx/download/" data-testid="cta-primary" class="sc-1d6ca56-0 jnBipv sc-8f90eaf7-0 cQWGGy sc-6c1053c3-0 hRkrsB variant-primary ornamental text-center"><span>play free</span></a>
+                                    </div>
+                                    <div class="d-flex justify-content-center mb-1">
+                                        <!-- Icon game mode -->
+                                        <img :src="mode.displayIcon ? mode.displayIcon : 'https://media.valorant-api.com/gamemodes/a8790ec5-4237-f2f0-e93b-08a8e89865b2/displayicon.png'"
+                                            class="object-fit-scale rounded" :alt="mode.displayName" tyle="width: 10vw;">
+                                        </div>>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -115,42 +114,7 @@
                 </div>
             </div>
         </div>
-        <!-- carousel 2 gameModes equippables -->
-        <div class="twoCarousel d-flex justify-content-evenly bg_black_transparent_8 p-5 m-5">
-            <div class="d-flex justify-content-center rounded w-100">
 
-                <div id="carouselExampleCaptions2" class="carousel slide my-3">
-                    <div class="carousel-indicators">
-                        <button v-for="(theme, index) in themes" type="button"
-                            data-bs-target="#carouselExampleCaptions2" :data-bs-slide-to="index"
-                            :class="{ active: index === 0 }" :aria-current="{ true: index === 0 }"
-                            :aria-label="index + 1"></button>
-
-                    </div>
-                    <div class="carousel-inner">
-                        <div v-for="(theme, index) in themes" :class="['carousel-item', { active: index === 0 }]">
-                            <img :src="theme.displayIcon" class="rounded-3 d-block object-fit-scale"
-                                :alt="theme.displayName" style="width: 30vw; height: 50vh;">
-                            <div class="carousel-caption d-md-block">
-                                <h5 class="fs-1 f_f_times">Theme: {{theme.displayName}}</h5>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions2"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
 
     </main>
     <footer>
