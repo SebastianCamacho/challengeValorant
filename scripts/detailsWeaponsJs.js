@@ -1,15 +1,18 @@
 const { createApp } = Vue;
-
+const urlDetails = "https://valorant-api.com/v1/weapons"
+const urlParams = new URLSearchParams(window.location.search);
+const weaponUuid = urlParams.get('uuid');
 createApp({
     data() {
         return {
             weapon: [],
-            weaponBK: []
+            weaponBK: [],
+            weaponDtls:[],
+            tetero:[]
         };
     },
     created() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const weaponUuid = urlParams.get('uuid');
+
         console.log('UUID:', weaponUuid); // Verificación de UUID
         if (weaponUuid) {
             this.fetchWeaponDetails(weaponUuid);
@@ -23,12 +26,29 @@ createApp({
                 .then(response => response.json())
                 .then(data => {
                     this.weapon = data.data;
+                    // Filtrar skins que no sean null
+                    this.weapon.skins = this.weapon.skins.filter(skin => skin !== null);
                 })
-                .catch(error => console.error('Error fetching weapon details:', error));
-
+                .catch(error => {
+                    console.error('Error fetching weapon details:', error);
+                });
+        
+            fetch(urlDetails)
+                .then(response => response.json())
+                .then(data => {
+                    this.weaponDtls = data.data;
+                })
+                .catch(error => {
+                    console.error('Error fetching weapon details:', error);
+                });
         },
         extractCategoryName(category) {
-            return category.split('::')[1] || category;
+            if (!category) {
+                console.error('condition no founded :p');
+                return ''; 
+            }
+            const parts = category.split('::');
+            return parts.length > 1 ? parts[1] : category;
         },
 
 
