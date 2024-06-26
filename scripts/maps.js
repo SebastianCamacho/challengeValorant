@@ -27,7 +27,6 @@ const app = createApp({
             fetch(url).then(res=>res.json()).then(data => {
                 this.maps = data.data
                 this.mapsBK = data.data
-                console.log(this.maps);
             })
         },
 
@@ -35,11 +34,9 @@ const app = createApp({
             const index = this.favoriteMaps.findIndex(fav => fav.uuid === map.uuid);
             if (index !== -1) {
                 this.favoriteMaps.splice(index, 1);
-                console.log(this.favoriteMaps);
                 this.updateLocalStore()
             }else {
                 this.favoriteMaps.push(map);
-                console.log(this.favoriteMaps);
                 this.updateLocalStore()
             }
         },
@@ -57,7 +54,6 @@ const app = createApp({
         filterSearch() {
             let filterText = this.mapsBK.filter(map => map.displayName.toLowerCase().includes(this.searchText.toLowerCase()))
             this.maps = filterText
-            console.log(this.maps);
         }
     }
 

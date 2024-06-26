@@ -460,7 +460,7 @@ footer a {
     transform: scale(1.2);
 }
 #imgMap:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 #map:hover {
@@ -864,3 +864,58 @@ transform: scale(1.2);
 }
 
 
+/* Estilos página desarrolladores */
+
+.card-header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.card-header ul li a{
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: wheat;
+
+    
+  
+}
+.card-developer{
+     
+   /*  background: radial-gradient(circle,   #ff0033, #212529);  */
+   /*  background: linear-gradient(to bottom, #c7f458ff, #d56324ff, #3a2656ff, #3a7233ff);
+    */
+    
+    background: linear-gradient(to bottom, #ff0000, #800080); 
+    
+   /*  background: linear-gradient(to bottom, #ff0000, #00008b);  */
+
+    transition: transform 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 14rem;
+    
+    
+}
+.card-developer:hover{
+    transform: scale(1.1);
+   
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+.card-header ul li a:hover i {
+    color: #95006A; /* Cambia a amarillo al pasar el ratón */
+    transform: scale(1.2); /* Aumenta el tamaño del icono al pasar el ratón */
+}
+
+.imgPageDevelopers{
+    width: 10vw;
+    height: 25vh;
+    margin: 3%;
+    object-fit: cover;
+}
