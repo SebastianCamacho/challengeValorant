@@ -7,6 +7,9 @@
 #main {
     font-family: 'Karantina', sans-serif;
 }
+#mainStats{
+    font-family: 'Karantina', sans-serif;
+}
 
 /* NAVBAR */
 .nav-link,
@@ -89,7 +92,7 @@
 
 /* Efecto hover */
 .image-card:hover {
-    flex: 3;
+    flex: 2;
     /* Se expande más */
     z-index: 4;
 }
@@ -121,6 +124,10 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
+}
+
+footer .card{
+    border-radius: 0;
 }
 
 footer a {
@@ -202,8 +209,27 @@ footer a {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.bg_black_transparent_5 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .bg_black_transparent_8 {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*width and height*/
+
+.w_100vw{
+    width: 100vw;
+}
+.w_75vw{
+    width: 75vw;
+}
+.w_50vw{
+    width: 50vw;
+}
+.w_25vw{
+    width: 25vw;
 }
 
 .bg_valorant { 
@@ -222,23 +248,24 @@ footer a {
     border: #FF0000 solid 1px;
 }
 
-/* .bgPersonalized{
-    background-color: #e1dacd;
-    height: 15vw;
-    width: 30vw;
+.hRkrsB.variant-primary {
+    background-color: rgb(255, 70, 85);
+    color: rgb(236, 232, 225);
+    transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+    width: 35%;
 }
-.bgPersonalized img{
-    width: 80%;
-    object-fit: cover;   
+.WbbKq, .sc-6c1053c3-0 {
+    margin-top: 32px;
+    padding: 13px 34px;
+    text-wrap: balance;
+    font-weight: 400;
+    font-family: DINNextW1G, sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
 }
-.fondo2{
-    display: flex;
-    text-align: center;
-    border: solid 2px red;
-    height: 4vw;
-    width: 100%;
 
-} */
+
 .custom-card .card {
     border: none;
     border-radius: 15px;
@@ -289,7 +316,6 @@ footer a {
 }
 /* mauricio yepes css*/
 .background-weapons{
-    border: solid 2px rgb(0, 255, 106);
     background: url('/images/backgroundWeapons.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
@@ -412,11 +438,15 @@ footer a {
 }
 
 #imgMap:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 #map:hover {
     transform: scale(1.2);
+}
+
+#imgMapDetail{
+    width: 35vw;
 }
 
 .star:hover, .star-filled:hover{
@@ -448,6 +478,71 @@ transform: scale(1.5);
 
 #modalBody{
     background-color: #212529;
+}
+
+
+
+
+
+
+
+/* STATS SEBASTIAN */
+.noStyle:hover{
+    transform: scale(1);
+    }
+.tituloStats{
+    background: radial-gradient(circle, #ff0033, #212529);
+}
+
+.seccionesStats .card{
+    color: white;
+    background: radial-gradient(circle, #ff0033, #212529);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+
+
+}
+
+
+.contStats{
+    border-radius: 15px;
+}
+
+.contStats .card:hover{
+    transform: scale(1.05);
+    }
+
+.contStats img:hover{
+transform: scale(1.2);
+}
+
+.seccionesStats{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.seccionesStats ul{
+    font-size: x-large;
+    margin-bottom: 2vh;
+}
+.seccionesStats li{
+    background: transparent;
+    color: white;
+}
+
+.seccionesStats h5{
+    font-size: xxx-large;
+
+}
+.numeral{
+    color: rgba(255, 70, 85);
+}
+
+.contStats .card a{
+    font-size: x-large;
+
+}
+
+.contStats .card .boton1:hover{
+    transform: scale(1);
+
 }
 
  

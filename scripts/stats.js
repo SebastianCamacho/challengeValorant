@@ -8,14 +8,24 @@ const app2 = createApp({
         return{
             weapons:[], 
             weaponsBK:[],
-            fast:{},
-            bestWall:{},
-            bestFireRate:{},
-            bestHeadDamage:{},
-            bestBodyDamage:{},
-            bestRange:{},
-            lowerCost:{},
-            higherCost:{}
+            topFast:[],
+            topEquip:[],
+            topFireRate:[],
+            topHeadDamage:[],
+            topBodyDamage:[],
+            topRange:[],
+            topLowerCost:[],
+            topHigherCost:[],
+            fastestArray:[],
+            bestEquipArray:[],
+            bestFireRate:[],
+            bestHeadDamage:[],
+            bestBodyDamage:[],
+            bestRange:[],
+            lowerCost:[],
+            higherCost:[],
+            Tops:[]
+
         }
     },
 
@@ -23,12 +33,15 @@ const app2 = createApp({
         try {
             this.bringData(url).then(() => {
                 this.fastReload();
-                this.bestWallPenetration();
+                this.bestEquipTime();
                 this.fireRate();
                 this.headDamage();
                 this.bodyDamage();
                 this.range();
-                this.calculateCosts();
+                this.calculateLowerCost();
+                this.calculateHigherCost();
+                console.log(this.Tops);
+                this.extrarRangos();
             });
         } catch (error) {
             console.error('Error in created hook:', error);
@@ -42,71 +55,145 @@ const app2 = createApp({
                 const data = await response.json();
                 this.weapons = data.data;
                 this.weaponsBK = data.data;
-                console.log(this.weaponsBK);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         },
 
         fastReload(){
-            console.log(this.weaponsBK);
-            let fastest = this.weaponsBK
-            fastest = fastest.sort((a, b) => a.weaponStats.reloadTimeSeconds - b.weaponStats.reloadTimeSeconds)
-            this.fast = fastest.slice(0)
-            console.log(fastest);
-            console.log(this.fast);
-            return this.fast
+            
+            this.fastestArray = this.weaponsBK.sort((a, b) => {
+                if (a.weaponStats && b.weaponStats && typeof a.weaponStats.reloadTimeSeconds === 'number' && typeof b.weaponStats.reloadTimeSeconds === 'number') {
+                    return a.weaponStats.reloadTimeSeconds - b.weaponStats.reloadTimeSeconds;
+                } else {
+                    return 0
+                }
+            });
+            this.topFast = this.fastestArray.slice(0, 3)
+            let objetoTop3={};
+            objetoTop3.name="Most Fast Reload"
+            objetoTop3.top=[...this.topFast]
+            this.Tops.push(objetoTop3);
+            return this.topFast
         },
 
-        bestWallPenetration(){
-            let bestWallArray = this.weaponsBK.sort((a, b) => b.weaponStats.wallPenetration - a.weaponStats.wallPenetration)
-            console.log(this.weaponsBK);
-            this.bestWall = bestWallArray.slice(0)
-            console.log(bestWallArray);
-            console.log(this.bestWall);
-            return this.bestWall
+        bestEquipTime(){
+            this.bestEquipArray = this.weaponsBK.sort((a, b) => {
+                if (a.weaponStats && b.weaponStats && typeof a.weaponStats.equipTimeSeconds === 'number' && typeof b.weaponStats.equipTimeSeconds === 'number') {
+                    return a.weaponStats.equipTimeSeconds - b.weaponStats.equipTimeSeconds;
+                } else {
+                    return 0
+                }
+            });
+            this.topEquip = this.bestEquipArray.slice(0, 3)
+            let objetoTop3={};
+            objetoTop3.name="Faster equipment time"
+            objetoTop3.top=[...this.topEquip]
+            this.Tops.push(objetoTop3);
+            return this.topEquip
         },
 
         fireRate(){
-            let fireRateArray = this.weaponsBK.sort((a, b) => b.weaponStats.fireRate - a.weaponStats.fireRate)
-            this.bestFireRate = fireRateArray.slice(0)
-            console.log(fireRateArray);
-            console.log(this.bestFireRate);
-            return this.bestFireRate
+            this.fireRateArray = this.weaponsBK.sort((a, b) => {
+                if (a.weaponStats && b.weaponStats && typeof a.weaponStats.fireRate === 'number' && typeof b.weaponStats.fireRate === 'number') {
+                    return b.weaponStats.fireRate - a.weaponStats.fireRate;
+                } else {
+                    return 0
+                }
+            });
+            this.topFireRate = this.fireRateArray.slice(0, 3)
+            let objetoTop3={};
+            objetoTop3.name="Best Fire Rate"
+            objetoTop3.top=[...this.topFireRate]
+            this.Tops.push(objetoTop3);
+            return this.topFireRate
         },
-
+        // no usada
         headDamage(){
-            let headDamageArray = this.weaponsBK.sort((a, b) => b.weaponStats.damageRanges.headDamage - a.weaponStats.damageRanges.headDamage)
-            this.bestHeadDamage = headDamageArray.slice(0)
-            console.log(headDamageArray);
-            console.log(this.bestHeadDamage);
-            return this.bestHeadDamage
+            this.headDamageArray = this.weaponsBK.sort((a, b) => {
+                if (a.weaponStats && b.weaponStats && typeof a.weaponStats.damageRanges.headDamage === 'number' && typeof b.weaponStats.damageRanges.headDamage === 'number') {
+                    return b.weaponStats.damageRanges.headDamage - a.weaponStats.damageRanges.headDamage;
+                } else {
+                    return 0
+                }
+            });
+            this.topHeadDamage = this.headDamageArray.slice(0, 3)
+            return this.topHeadDamage
         },
-
+        // no usada
         bodyDamage(){
-            let bodyDamageArray = this.weaponsBK.sort((a, b) => b.weaponStats.damageRanges.bodyDamage - a.weaponStats.damageRanges.bodyDamage)
-            this.bestBodyDamage = bodyDamageArray.slice(0)
-            console.log(bodyDamageArray);
-            console.log(this.bestBodyDamage);
-            return this.bestBodyDamage
+            this.bodyDamageArray = this.weaponsBK.sort((a, b) => {
+                if (a.weaponStats && b.weaponStats && typeof a.weaponStats.damageRanges.bodyDamage === 'number' && typeof b.weaponStats.damageRanges.bodyDamage === 'number') {
+                    return a.weaponStats.damageRanges.bodyDamage - a.weaponStats.damageRanges.bodyDamage;
+                } else {
+                    return 0
+                }
+            });
+            this.topBodyDamage = this.bodyDamageArray.slice(0,3)
+            let objetoTop3={};
+            return this.topBodyDamage
         },
-
+        // no usada
         range(){
-            let rangeArray = this.weaponsBK.sort((a, b) => b.weaponStats.damageRanges.rangeStartMeters - a.weaponStats.damageRanges.rangeStartMeters)
-            this.bestRange = rangeArray.slice(0)
-            console.log(rangeArray);
-            console.log(this.bestRange);
-            return this.bestRange
+            this.rangeArray = this.weaponsBK.sort((a, b) => {
+                if (a.weaponStats && b.weaponStats && typeof a.weaponStats.damageRanges.rangeStartMeters === 'number' && typeof b.weaponStats.damageRanges.rangeStartMeters === 'number') {
+                    return b.weaponStats.damageRanges.rangeStartMeters - a.weaponStats.damageRanges.rangeStartMeters;
+                } else {
+                    return 0
+                }
+            });
+            this.topRange = this.rangeArray.slice(0, 3)
+            return this.topRange
+        },
+        calculateLowerCost() {
+            this.lowerCost = this.weaponsBK.slice().sort((a, b) => {
+                if (a.weaponStats && b.weaponStats && typeof a.shopData.cost === 'number' && typeof b.shopData.cost === 'number') {
+                    return a.shopData.cost - b.shopData.cost;
+                } else {
+                    return 0
+                }
+            });
+            this.topLowerCost = this.lowerCost.slice(0, 3)
+            let objetoTop3={};
+            objetoTop3.name="Most Lower Cost"
+            objetoTop3.top=[...this.topLowerCost]
+            this.Tops.push(objetoTop3);
+            return this.topLowerCost
+        },
+        calculateHigherCost() {
+            this.higherCost = this.weaponsBK.slice().sort((a, b) => {
+                if (a.weaponStats && b.weaponStats && typeof a.shopData.cost === 'number' && typeof b.shopData.cost === 'number') {
+                    return b.shopData.cost - a.shopData.cost;
+                } else {
+                    return 0
+                }
+            });
+            this.topHigherCost = this.higherCost.slice(0, 3);
+            let objetoTop3={};
+            objetoTop3.name="Most Hegher Cost"
+            objetoTop3.top=[...this.topHigherCost]
+            this.Tops.push(objetoTop3);
+            return this.topHigherCost
         },
 
-        calculateCosts() {
-            let costArrayAsc = this.weaponsBK.slice().sort((a, b) => a.weaponStats.shopData.cost - b.weaponStats.shopData.cost);
-            this.lowerCost = costArrayAsc;
-            console.log(this.lowerCost);
-            
-            let costArrayDesc = this.weaponsBK.slice().sort((a, b) => b.weaponStats.shopData.cost - a.weaponStats.shopData.cost);
-            this.higherCost = costArrayDesc;
-            console.log(this.higherCost);
+        extrarRangos(){
+          let weaponsAux = [...this.weapons] 
+          let rangos=[];
+          weaponsAux.forEach(arma => {
+            if (arma.weaponStats && arma.weaponStats.damageRanges) {
+              arma.weaponStats.damageRanges.forEach(element => {
+                element.id = arma.uuid
+                element.nameArma = arma.displayName
+                rangos.push(element)
+              });
+              
+            }
+          }); 
+          rangos.sort( (a,b) =>{
+            return a.uuid - b.uuid
+          } )
+          console.log(weaponsAux[0]);
+          console.log(rangos);
         }
     },
 
