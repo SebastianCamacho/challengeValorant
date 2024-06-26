@@ -719,6 +719,8 @@ transform: scale(1.2);
     position: relative;
     cursor: pointer;
     opacity: 0.5;
+    display: flex;
+    flex-wrap: wrap;
   }
   .amCardAbility:hover{
     transform: scale(1.1);
@@ -741,6 +743,7 @@ transform: scale(1.2);
     /* color:mediumvioletred; */
     color:black;
     /* Ocultar inicialmente */
+    margin: -3.5vh 0 -1vh -2vh;
   }
   
 .amCardAbility.active .card-back {
@@ -748,8 +751,8 @@ transform: scale(1.2);
     transform: translateY(0);
   }
   
-  .card-back p{
-    font-size:13px;
+  .card-back h6{
+    font-size:14px;
   }
   .agent-portrait:hover{
   
@@ -762,15 +765,6 @@ transform: scale(1.2);
     filter: brightness(1.1);
   }
   .amBodyDetailsAgents{
-   /*  background-color: #1A242E;
-    background-image: url('https://media.valorant-api.com/playercards/3d3e270e-4c89-ea1f-2bea-32a40a21dd75/wideart.png');
-    background-repeat: no-repeat;
-    background-position:center-down;
-    background-size: 70%; */
-   /*  background: linear-gradient(to right, #FF0000, #00FF00, #0000FF);
-    height: 100vh;
-    margin: 0; */
-    /* background: linear-gradient(to right, #ff4655, #ff9a8b, #2c2f33); */
     background: linear-gradient(to right, #8e44ad, #3498db, #2c3e50);
   }
   .agentCard{
@@ -786,11 +780,15 @@ transform: scale(1.2);
     text-align: center; 
 }
 #content-abilities{
+    position: relative;
     display: flex;
     justify-content: space-around;
+    align-content: center;
+    align-items: center;
 }
 .abilityCard{
     width: 40vh;
+    padding-top: 2vh;
 }
 .buttonFavorites{
     margin-right: 2vh;
@@ -883,15 +881,7 @@ transform: scale(1.2);
   
 }
 .card-developer{
-     
-   /*  background: radial-gradient(circle,   #ff0033, #212529);  */
-   /*  background: linear-gradient(to bottom, #c7f458ff, #d56324ff, #3a2656ff, #3a7233ff);
-    */
-    
     background: linear-gradient(to bottom, #ff0000, #800080); 
-    
-   /*  background: linear-gradient(to bottom, #ff0000, #00008b);  */
-
     transition: transform 0.3s ease;
     padding: 20px;
     border-radius: 10px;

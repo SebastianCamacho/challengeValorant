@@ -55,7 +55,7 @@
     </nav>
   </header>
   <main id="appWeapons">
-    <div class="background-weapons">
+    <div class="background-weapons py-3">
       <div class="input-group mb-3 p-5 custom-input-group">
         {{megaFilter}}
         <button type="button" class="btn btn-outline-secondary">
@@ -78,7 +78,7 @@
           aria-label="Text input with segmented dropdown button">
       </div>
 
-      <div id="fondo" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-0  custom-fondo">
+      <div id="fondo" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-0 m-3 custom-fondo">
         <div v-if="weapons.length == 0" id="textFound" class="custom-text-found">
           <h2>NO Weapons found</h2>
         </div>
