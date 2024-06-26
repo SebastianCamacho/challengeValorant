@@ -89,7 +89,7 @@
 
 /* Efecto hover */
 .image-card:hover {
-    flex: 3;
+    flex: 2;
     /* Se expande más */
     z-index: 4;
 }
@@ -115,6 +115,10 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
+}
+
+footer .card{
+    border-radius: 0;
 }
 
 footer a {
@@ -251,7 +255,6 @@ footer a {
 }
 /* mauricio yepes css*/
 .background-weapons{
-    border: solid 2px rgb(0, 255, 106);
     background: url('/images/backgroundWeapons.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
@@ -361,11 +364,17 @@ footer a {
     background-color: #1A242E;
 }
 #imgMap:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 #map:hover {
     transform: scale(1.2);
 }
+
+
+#imgMapDetail{
+    width: 35vw;
+}
+
 .star:hover, .star-filled:hover{
 transform: scale(1.5);
 }
@@ -390,6 +399,7 @@ transform: scale(1.5);
 #modalBody{
     background-color: #212529;
 }
+
 .footerS:hover {
     transform: scale(1);
 }
@@ -399,19 +409,43 @@ transform: scale(1.5);
     transform: scale(1);
     }
 .tituloStats{
-    background-color: rgba(255, 70, 85, 0.5);
+    background: radial-gradient(circle, #ff0033, #212529);
+}
+
+.seccionesStats .card{
+    color: white;
+    background: radial-gradient(circle, #ff0033, #212529);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 .contStats{
     border-radius: 15px;
 }
+.contStats{
+    border-radius: 15px;
+}
+.contStats .card:hover{
+    transform: scale(1.05);
+    }
+
+.contStats img:hover{
+transform: scale(1.2);
+}
+
 .seccionesStats{
     background-color: rgba(255, 255, 255, 0.1);
-
 }
+.seccionesStats ul{
+    font-size: x-large;
+    margin-bottom: 2vh;
+}
+.seccionesStats li{
+    background: transparent;
+    color: white;
+}
+
 .contStats .card a{
     font-size: 2vw;
 }
-
 /* styles agents, details agents and development team. */
 /*agents*/
 #card{
@@ -587,9 +621,6 @@ transform: scale(1.5);
     padding: 1vh;
     /* color:mediumvioletred; */
     color:black;
-    
-    
-    
     /* Ocultar inicialmente */
   }
   
@@ -622,9 +653,6 @@ transform: scale(1.5);
     margin: 0; */
     /* background: linear-gradient(to right, #ff4655, #ff9a8b, #2c2f33); */
     background: linear-gradient(to right, #8e44ad, #3498db, #2c3e50);
-   
- 
-    
   }
   .agentCard{
     display: flex;
@@ -647,5 +675,18 @@ transform: scale(1.5);
 }
 .buttonFavorites{
     margin-right: 2vh;
+}
+.seccionesStats h5{
+    font-size: xxx-large;
+}
+.numeral{
+    color: rgba(255, 70, 85);
+}
+.contStats .card a{
+    font-size: x-large;
+
+}
+.contStats .card .boton1:hover{
+    transform: scale(1);
 }
 
