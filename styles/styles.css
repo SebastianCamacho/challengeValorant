@@ -202,8 +202,27 @@ footer a {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.bg_black_transparent_5 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .bg_black_transparent_8 {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*width and height*/
+
+.w_100vw{
+    width: 100vw;
+}
+.w_75vw{
+    width: 75vw;
+}
+.w_50vw{
+    width: 50vw;
+}
+.w_25vw{
+    width: 25vw;
 }
 
 .bg_valorant { 
@@ -220,6 +239,23 @@ footer a {
 
 .fatherInfo:hover{
     border: #FF0000 solid 1px;
+}
+
+.hRkrsB.variant-primary {
+    background-color: rgb(255, 70, 85);
+    color: rgb(236, 232, 225);
+    transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+    width: 35%;
+}
+.WbbKq, .sc-6c1053c3-0 {
+    margin-top: 32px;
+    padding: 13px 34px;
+    text-wrap: balance;
+    font-weight: 400;
+    font-family: DINNextW1G, sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
 }
 
 /* .bgPersonalized{
