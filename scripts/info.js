@@ -1,5 +1,4 @@
 let urlInfo = window.location.href
-console.log(urlInfo)
 
 //Url info API
 
