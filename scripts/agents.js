@@ -2,6 +2,7 @@ let urlBase='https://valorant-api.com/'
 let urlWeapons=urlBase+'v1/agents'
 console.log(urlWeapons);
 
+
 const {createApp}=Vue;
 const app= createApp({
     data(){
