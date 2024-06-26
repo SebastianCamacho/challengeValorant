@@ -476,6 +476,7 @@ transform: scale(1.5);
     }
 
 .contStats img:hover{
+    cursor: pointer;
 transform: scale(1.2);
 }
 
