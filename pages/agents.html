@@ -7,124 +7,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="icon" href="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt50870b13992cdf47/63b0d7d089f85210f400107e/val-logo-small.png">
     <link rel="stylesheet" href="/styles/styles.css">
-    <style>
-        .card {
-            
-             background: radial-gradient(circle,   #ff0033, #212529); 
-           /*  background: linear-gradient(to bottom, #c7f458ff, #d56324ff, #3a2656ff, #3a7233ff);
- */
-            transition: transform 0.3s ease;
-            width: 18rem;
-            
-        }
-        
-#card:hover {
-    transform: scale(1.1);
-}
-.amImage:hover{
-    transform: scale(1.5);
-}
-
-
-/* .modal-content{
-  background: radial-gradient(circle,   #ff0033, #212529); 
-    
-            transition: transform 0.3s ease;
-} */
-.lista,.navbar{
-    display: flex;
-    justify-content: space-between;
-    background: radial-gradient(circle,   #ff0033, #212529); 
-           /*  background: linear-gradient(to bottom, #c7f458ff, #d56324ff, #3a2656ff, #3a7233ff);
- */
-            transition: transform 0.3s ease;
-    color: #ffffff;
-   
-}
-a{
-    padding-right: 1.5vh;
-}
-.video{
-    /* fixed o absolute */
-   position: fixed; 
-   right: 0;
-   bottom: 0;
-   height: auto;
-    z-index: -1;
-   
-}
-/* .imageRiot{
-    width: 10vh;
-} */
-main{
-    padding:5vh 5vh ;
-}
-.star:hover, .star-filled:hover{
-transform: scale(1.5);
-}
-.star {
-  fill: gray;
-  cursor: pointer;
-}
-
-.star-filled {
-  fill: gold;
-}
-.alternativeImag{
-    position:absolute; 
-   right: 0;
-   bottom: 0;
-   width: 100%;
-   height: 100%;
-    z-index: -1;
-    opacity: 0.85;
-}
-.carousel{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.carousel img {
-    width: 100%;
-    height: 40vh;
-    object-fit:cover;
-   object-position: center top;
-   opacity: 0.8;
-}
-.modal-favorite .modal-content {
-      position: relative;
-      background: transparent;
-      overflow: hidden;
-    }
-
-    .modal-favorite .video-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      z-index: -1;
-    
-    }
-
-    .modal-favorite .carousel-caption h1 {
-      color: white;
-    }
-    .modal-footer{
-      display: flex;
-      justify-content: center;
-    }
-
-
-    </style>
     <title>Agents</title>
 </head>
-<body id="app" style="background-color: #1A242E;">
+<body id="app" class="bodyAgents" >
       <video class="video" src="https://assets.contentstack.io/v3/assets/blt2ac872571a60ee02/bltc3128a843ac2ef28/618d752b6407fe7f991e9915/background-video-d-01.mp4" autoplay="" muted="" loop="" playsinline=""  style="object-fit: cover; object-position: center center; height: 100%; width: 100%; transform-origin: center center;"></video> 
 <header>
-    <nav class="navbar navbar-expand-sm bg-dark">
+    <nav class="navbar navbar-expand-sm bg-dark navbarAgents">
         <div class="container-fluid justify-content-between">
           <div class="col-10 col-sm-3">
             <a class="navbar-brand" href="/index.html">
@@ -180,12 +68,15 @@ transform: scale(1.5);
    
    
 </header>
-<main >
+<main class="amMain" >
 
   <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="amImage" style="object-position: center; height:50vh ; object-fit: cover;" src="https://i.pinimg.com/originals/be/1c/05/be1c05ae9f9d3447efc866e0e4f588e5.png" alt="...">
+        
+          <img  id="agentImag"  src="https://i.pinimg.com/originals/be/1c/05/be1c05ae9f9d3447efc866e0e4f588e5.png" alt="...">
+        
+        
         <div class="carousel-caption d-none d-md-block">
             <h1>AGENTS</h1>
             
@@ -195,7 +86,7 @@ transform: scale(1.5);
       </div>
 
     
-  <div class="lista" style="padding: 2vh 2vh; text-align: center; margin-top: 2vh;"  >
+  <div class="lista listaAgents"   >
     {{superFilter}}
    <div class="listCheck" id="lista">
        <div v-for="role in roles" class="form-check form-check-inline">
@@ -205,7 +96,7 @@ transform: scale(1.5);
        </div>
    </div>
    <form class="d-flex" role="search">
-    <button type="button" data-bs-toggle="modal" data-bs-target="#modalFavorites" class="btn btn-dark" style="margin-right: 2vh;">Favorites</button>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#modalFavorites" class="btn btn-dark buttonFavorites" >Favorites</button>
        <input v-model="textSearch" id="buscar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
        
    </form>
@@ -214,7 +105,7 @@ transform: scale(1.5);
    
     
 
-    <div class="row row-cols-1 row-cols-md-2 g-4"style="display: flex; justify-content: space-around; padding-top: 5vh;" >
+    <div id="rowAgent" class="row row-cols-1 row-cols-md-2 g-4" >
       
        
               
@@ -232,7 +123,7 @@ transform: scale(1.5);
             </a>
             
         <div class="card-body"  >
-            <div class="card-footer bg-dark border-danger" style="color: #ffffff; text-align: center; ">{{event.displayName}} 
+            <div id="amCardFooter" class="card-footer bg-dark border-danger" >{{event.displayName}} 
                 <!-- <span class="material-symbols-outlined">
                     favorite
                     </span> -->
@@ -257,12 +148,12 @@ transform: scale(1.5);
       <!-- Modal -->
       <div class="modal fade modal-favorite" id="modalFavorites" tabindex="-1" aria-labelledby="modalFavoritesLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-          <div class="modal-content">
+          <div class="modal-content amModal">
             <!-- Video de fondo -->
             <video class="video-background" src="https://assets.contentstack.io/v3/assets/blt2ac872571a60ee02/bltc3128a843ac2ef28/618d752b6407fe7f991e9915/background-video-d-01.mp4" autoplay muted loop playsinline></video>
             
             <div class="modal-header">
-              <div id="carouselExample" class="carousel slide">
+              <div id="" class="carousel slide amCarousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <img  src="https://www.pcgamesn.com/wp-content/uploads/2020/07/valorant-tier-list-best-agents.jpg" class="d-block w-100" alt="...">
@@ -279,14 +170,14 @@ transform: scale(1.5);
               <div class="row justify-content-evenly">
                 <div class="col-12">
                   <div class="row">
-                    <div v-if="favorites.length > 0" class="row row-cols-1 row-cols-md-2 g-4" style="display: flex; justify-content: space-around;">
+                    <div v-if="favorites.length > 0" class="row row-cols-1 row-cols-md-2 g-4" id="rowModalAgent" >
                       <div v-for="event in favorites" :key="event.displayName" id="card" class="card bg-dark">
                         <img class="card-img-top alternativeImag amImage" :src="event.background" alt="" height="250vh" width="45vh">
                         <a @click.prevent="goToDetails(event)">
                           <img :src="event.fullPortrait" class="card-img-top amImage" alt="..." height="250vh" width="45vh">
                         </a>
                         <div class="card-body">
-                          <div class="card-footer bg-dark border-danger" style="color: #ffffff; text-align: center;">
+                          <div class="card-footer bg-dark border-danger" id="amCardFooter" >
                             {{ event.displayName }}
                             <div>
                               <a @click="toggleFavorite(event)">
@@ -304,7 +195,7 @@ transform: scale(1.5);
               </div>
             </div>
             
-            <div class="modal-footer ">
+            <div class="modal-footer amModalFooter ">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
           </div>
@@ -357,7 +248,7 @@ transform: scale(1.5);
             <div class="card-body">
                 <!--RioGames-->
                 <a href="https://www.riotgames.com/es">
-                   <img class="imageRiot" style="width: 10vh;" src="/images/riotGames.png" alt="">
+                   <img class="imageRiot" width="110" src="/images/riotGames.png" alt="">
                 </a>
                 
                 <img src="https://images.contentstack.io/v3/assets/blt0eb2a2986b796d29/blt50870b13992cdf47/63b0d7d089f85210f400107e/val-logo-small.png?&amp;height=75&amp;disable=upscale" alt="val-logo">

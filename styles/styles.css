@@ -79,15 +79,12 @@
     /* Mediano */
     right: 5%;
     z-index: 2;
-
 }
-
 .image-card:nth-child(5) {
     flex: 1.2;
     /* Más pequeño */
     right: 10%;
     z-index: 1;
-
 }
 
 /* Efecto hover */
@@ -96,15 +93,9 @@
     /* Se expande más */
     z-index: 4;
 }
-
-
 .image-card:hover img {
     filter: brightness(1.2);
 }
-
-
-
-
 .h2 {
     font-size: 8vw;
 }
@@ -138,36 +129,27 @@ footer a {
         height: 40vh;
         margin-bottom: 5vh;
     }
-
     .image-card {
         margin: 0 0.5%;
     }
-
     .boton1 {
         font-size: 6vw;
     }
-
     .h2 {
         font-size: 11vh;
     }
-
 }
-
 
 @media (max-width: 480px) {
     .image-container {
         height: 30vh;
     }
-
     .image-card {
         margin: 0 0.5%;
-
     }
-
     .boton1 {
         font-size: 7vw;
     }
-
     .h2 {
         font-size: 8vh;
     }
@@ -224,8 +206,6 @@ footer a {
 .fatherInfo:hover{
     border: #FF0000 solid 1px;
 }
-
-
 .custom-card .card {
     border: none;
     border-radius: 15px;
@@ -233,12 +213,10 @@ footer a {
     
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .custom-card .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 .custom-card .card:active {
     transform: scale(0.95);
 }
@@ -249,19 +227,16 @@ footer a {
     object-fit: cover;
     /* border: 2px blue solid; */
 }
-
 .custom-card .card-title {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
 .bgPersonalized {
     background: linear-gradient(135deg, #ece9e6, #ffffff);
     display: flex;
     justify-content: space-between;
     /* border: solid 2px red; */
 }
-
 .fondo2 {
     background: #f8f9fa;
     height: 40%;
@@ -281,18 +256,15 @@ footer a {
     background-size: cover;
     color: white;
 }
-
 .custom-input-group {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
 }
-
 .custom-fondo {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
 }
-
 .custom-card {
     background: radial-gradient(circle, #3be7e7, #212529);
     color: white;
@@ -304,18 +276,15 @@ footer a {
     display: flex;
     justify-content: space-between;
 }
-
 .custom-card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
-
 .custom-card-img-container {
     position: relative;
     overflow: visible;
     z-index: 1;
 }
-
 .custom-card-img {
     transition: transform 0.3s ease;
     border-top-left-radius: 15px;
@@ -323,18 +292,15 @@ footer a {
     position: relative;
     z-index: 1;
 }
-
 .custom-card:hover .custom-card-img {
     transform: translateY(-10px) scale(1.2);
     z-index: 2;
 }
-
 .custom-card-footer {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
     z-index: 2;
 }
-
 .custom-btn {
     background: radial-gradient(circle, #3be7e7, #212529);
     border: 2px solid #3be7e7;
@@ -347,13 +313,11 @@ footer a {
     box-shadow: 0 4px 15px rgba(4, 135, 158, 0.4);
     text-transform: uppercase;
 }
-
 .custom-btn:hover {
     background: radial-gradient(circle, #3be7e7, #1a1d1f);
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(6, 140, 145, 0.6);
 }
-
 .custom-text-found {
     color: white;
 }
@@ -393,36 +357,28 @@ footer a {
 .map{
     background: radial-gradient(circle,   #00ff22, #212529);          
 }
-
 #mapsBody{
     background-color: #1A242E;
 }
-
 #imgMap:hover{
     transform: scale(1.5);
 }
-
 #map:hover {
     transform: scale(1.2);
 }
-
 .star:hover, .star-filled:hover{
 transform: scale(1.5);
 }
-
 .star {
   fill: gray;
   cursor: pointer;
 }
-
 .star-filled {
   fill: gold;
 }
-
 .star:hover, .star-filled:hover{
     transform: scale(1.5);
 }
-
 .video{
     /* fixed o absolute */
    position: fixed; 
@@ -430,21 +386,13 @@ transform: scale(1.5);
    bottom: 0;
    height: auto;
     z-index: -1;
-   
 }
-
 #modalBody{
     background-color: #212529;
 }
-
- 
-
 .footerS:hover {
     transform: scale(1);
 }
-
-
-
 
 /* STATS SEBASTIAN */
 .noStyle:hover{
@@ -453,18 +401,251 @@ transform: scale(1.5);
 .tituloStats{
     background-color: rgba(255, 70, 85, 0.5);
 }
-
 .contStats{
     border-radius: 15px;
 }
-
 .seccionesStats{
     background-color: rgba(255, 255, 255, 0.1);
 
 }
-
-
 .contStats .card a{
     font-size: 2vw;
+}
+
+/* styles agents, details agents and development team. */
+/*agents*/
+#card{
+    background: radial-gradient(circle,   #ff0033, #212529); 
+    /*  background: linear-gradient(to bottom, #c7f458ff, #d56324ff, #3a2656ff, #3a7233ff);
+*/
+     transition: transform 0.3s ease;
+     width: 18rem;    
+}
+#card:hover{
+    transform: scale(1.1);
+}
+.amImage:hover{
+    transform: scale(1.5);
+    filter: brightness(1.2);
+    
+}
+#agentImag {
+    object-position: center !important;
+    height: 50vh !important;
+    object-fit: cover !important;
+    
+  }
+.listaAgents,.navbarAgents{
+    display: flex;
+    justify-content: space-between;
+    background: radial-gradient(circle,   #ff0033, #212529); 
+           /*  background: linear-gradient(to bottom, #c7f458ff, #d56324ff, #3a2656ff, #3a7233ff);
+ */
+            transition: transform 0.3s ease;
+    color: #ffffff;
+   
+}
+.listaAgents{
+    padding: 2vh ;
+    text-align: center;
+    margin-top: 2vh;
+}
+.amMain{
+    padding: 5vh;
+   
+}
+#rowAgent{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5vh;
+}
+#rowModalAgent{
+    display: flex;
+    justify-content: space-around;
+}
+.alternativeImag{
+    position:absolute; 
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+    z-index: -1;
+    opacity: 0.85;
+}
+#carouselExample{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#carouselExample img {
+    width: 100%;
+    height: 40vh;
+    object-fit:cover;
+   object-position: center top;
+   opacity: 0.8;
+}
+.modal-favorite .amModal {
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+  }
+  .modal-favorite .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+  }
+  .modal-favorite .carousel-caption h1 {
+    color: white;
+  }
+  .amModalFooter{
+    display: flex;
+    justify-content: center;
+  }
+  #amCardFooter{
+    color: #ffffff;
+    text-align: center;
+  }
+/*Details Agents*/
+
+.card-center{
+    margin: 0 auto;
+    max-width: 10rem;
+    background-color: #1A242E;
+    text-align: center;
+}
+.agent-icon-container{
+    text-align: center;
+}
+.agent-icon{
+    display: inline-block;
+    height: auto;
+}
+.divider{
+    border-bottom:2px solid;
+    border-color: #dc3545;
+}
+.amMainDetails{
+    padding-bottom: 5vh;
+    overflow: hidden;
+}
+.agent-portrait{
+    position: relative;
+    width: 140%;
+    height: auto;
+    transform: translateY(100px); /* Ajusta según la necesidad */
+    opacity: 0;
+    transition: transform 3s ease, opacity 3s ease, background-color 0.3s ease;
 
 }
+.agent-portrait.loaded {
+    transform: translateY(0);
+    opacity: 1;
+    
+  }
+  .amCardAbility, .card-back{
+    /* background-color: #1A242E; */
+    background-color:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    
+    cursor: pointer;
+  }
+
+  .amCardAbility.active, .card-back{
+    transform: scale(1.1);
+    opacity: 1;
+    position: relative;
+    transform-style: preserve-3d;
+  transition: transform 0.6s;
+  }
+  .amCardAbility {
+    position: relative;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .amCardAbility:hover{
+    transform: scale(1.1);
+  }
+  .card-back {
+    position:absolute;
+    transform: rotateY(180deg) scaleX(-1);
+    top: 0;
+    left: 0;
+    background-color:rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.6s;
+    width: 16rem;
+    height: 17rem;
+    border-radius: 10px;
+    padding: 1vh;
+    /* color:mediumvioletred; */
+    color:black;
+    
+    
+    
+    /* Ocultar inicialmente */
+  }
+  
+.amCardAbility.active .card-back {
+    display: block; 
+    transform: translateY(0);
+  }
+  
+  .card-back p{
+    font-size:13px;
+  }
+  .agent-portrait:hover{
+  
+    background-image: url('https://cdn.pixabay.com/photo/2017/09/14/11/17/water-2748670_1280.png');
+    background-size: 70%; /* Ajusta el tamaño de la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    transform: scale(1.1); /* Escala la imagen en hover */
+    opacity: 1;
+    filter: brightness(1.1);
+  }
+  .amBodyDetailsAgents{
+   /*  background-color: #1A242E;
+    background-image: url('https://media.valorant-api.com/playercards/3d3e270e-4c89-ea1f-2bea-32a40a21dd75/wideart.png');
+    background-repeat: no-repeat;
+    background-position:center-down;
+    background-size: 70%; */
+   /*  background: linear-gradient(to right, #FF0000, #00FF00, #0000FF);
+    height: 100vh;
+    margin: 0; */
+    /* background: linear-gradient(to right, #ff4655, #ff9a8b, #2c2f33); */
+    background: linear-gradient(to right, #8e44ad, #3498db, #2c3e50);
+   
+ 
+    
+  }
+  .agentCard{
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  .rowAbilities{
+    padding: 1.5vh 0 6vh 1.5vh;
+  }
+.rowAbilities h2{
+    padding: 2vh 0; 
+    text-align: center; 
+}
+#content-abilities{
+    display: flex;
+    justify-content: space-around;
+}
+.abilityCard{
+    width: 40vh;
+}
+.buttonFavorites{
+    margin-right: 2vh;
+}
+
