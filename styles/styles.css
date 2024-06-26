@@ -741,6 +741,7 @@ transform: scale(1.2);
     /* color:mediumvioletred; */
     color:black;
     /* Ocultar inicialmente */
+    margin: -3.5vh 0 -1vh -2vh;
   }
   
 .amCardAbility.active .card-back {
@@ -748,8 +749,8 @@ transform: scale(1.2);
     transform: translateY(0);
   }
   
-  .card-back p{
-    font-size:13px;
+  .card-back h6{
+    font-size:14px;
   }
   .agent-portrait:hover{
   
@@ -786,8 +787,11 @@ transform: scale(1.2);
     text-align: center; 
 }
 #content-abilities{
+    position: relative;
     display: flex;
     justify-content: space-around;
+    align-content: center;
+    align-items: center;
 }
 .abilityCard{
     width: 40vh;
