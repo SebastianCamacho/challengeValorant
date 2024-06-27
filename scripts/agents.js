@@ -139,10 +139,7 @@ computed:{
         } else {
             this.agents= filterText
         }           
-    }/* ,
-    selectedAbility(){
-        return this.agentDetail && this.agentDetail.abilities.length > 0 ? this.agentDetail.abilities[this.selectAbilityIndex] : {};
-    } */
+    }
 },
 watch: {
     agentDetail: function (newVal) {
