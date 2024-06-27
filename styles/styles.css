@@ -583,9 +583,10 @@ transform: scale(1.2);
     
 }
 #agentImag {
-    object-position: center !important;
-    height: 50vh !important;
+    object-position: center!important;
+    height: 40vh !important;
     object-fit: cover !important;
+    width:100% !important; 
     
   }
 .listaAgents{
@@ -629,10 +630,11 @@ transform: scale(1.2);
     display: flex;
     justify-content: center;
     width: 100%;
+    height: auto;
 }
 #carouselExample img {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
     object-fit:cover;
    object-position: center top;
    opacity: 0.8;
@@ -663,6 +665,21 @@ transform: scale(1.2);
     color: #ffffff;
     text-align: center;
   }
+  .imageInicialAgents{
+    width: 100% !important;
+    height: auto;
+}
+.custom-checkbox:checked{
+    background-color:black;
+    border-color: white;
+    box-shadow:#C850C0 0px 0px 0px 2px;
+}
+.custom-checkbox, .custom-checkbox:checked::after{
+    box-shadow:#C850C0 0px 0px 0px 2px;
+    
+   
+}
+
 /*Details Agents*/
 
 .card-center{
@@ -785,6 +802,7 @@ transform: scale(1.2);
     justify-content: space-around;
     align-content: center;
     align-items: center;
+    padding: 0 4vh;
 }
 .abilityCard{
     width: 40vh;
@@ -806,6 +824,7 @@ transform: scale(1.2);
 .contStats .card .boton1:hover{
     transform: scale(1);
 }
+
 /*footer*/
 .footer-card {
     background-color: black;
@@ -817,53 +836,44 @@ transform: scale(1.2);
     justify-content: center;
     padding: 10px 0;
 }
-
 .footer-header a svg {
     width: 24px;
     height: 24px;
     fill: white;
     margin: 0 10px;
 }
-
 .footer-body {
     text-align: center;
     padding: 20px;
 }
-
 .footer-image-riot {
     width: 10vh;
     margin-bottom: 10px;
 }
-
 .footer-image-val {
     height: 75px;
     margin-bottom: 10px;
 }
-
 .footer-text {
     margin: 10px 0;
     color: white;
 }
-
 .footer-links {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
     color: white;
 }
-
 .footer-footer {
     text-align: center;
     padding: 10px 0;
 }
-
 .footer-footer a img {
     height: 100px;
 }
 
 
 /* Estilos página desarrolladores */
-
 .card-header ul {
     list-style-type: none;
     padding: 0;
@@ -871,14 +881,10 @@ transform: scale(1.2);
     display: flex;
     justify-content: center;
 }
-
 .card-header ul li a{
     margin: 0 10px;
     font-size: 1.5rem;
     color: wheat;
-
-    
-  
 }
 .card-developer{
     background: linear-gradient(to bottom, #ff0000, #800080); 
@@ -886,9 +892,7 @@ transform: scale(1.2);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 14rem;
-    
-    
+    width: 14rem; 
 }
 .card-developer:hover{
     transform: scale(1.1);

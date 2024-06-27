@@ -71,11 +71,11 @@
 <main class="amMain" >
 
   <div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
+    <div class="carousel-inner imageInicialAgents">
       <div class="carousel-item active">
         
           <img  id="agentImag"  src="https://i.pinimg.com/originals/be/1c/05/be1c05ae9f9d3447efc866e0e4f588e5.png" alt="...">
-        
+          
         
         <div class="carousel-caption d-none d-md-block">
             <h1>AGENTS</h1>
@@ -91,7 +91,7 @@
    <div class="listCheck" id="lista">
        <div v-for="role in roles" class="form-check form-check-inline">
            
-           <input v-model="roleSelect" class="form-check-input" type="checkbox" :id="role.displayName" :value="role.displayName">
+           <input v-model="roleSelect" class="form-check-input custom-checkbox"  type="checkbox" :id="role.displayName" :value="role.displayName">
            <label class="form-check-label" :for="role.displayName">{{role.displayName}}</label>
        </div>
    </div>
