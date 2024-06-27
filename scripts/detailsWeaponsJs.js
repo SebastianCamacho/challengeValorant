@@ -13,7 +13,7 @@ createApp({
     },
     created() {
 
-        console.log('UUID:', weaponUuid); // Verificación de UUID
+        console.log('UUID:', weaponUuid); 
         if (weaponUuid) {
             this.fetchWeaponDetails(weaponUuid);
         } else {
@@ -27,7 +27,15 @@ createApp({
                 .then(data => {
                     this.weapon = data.data;
                     // Filtrar skins que no sean null
-                    this.weapon.skins = this.weapon.skins.filter(skin => skin !== null);
+
+                    // this.weapon.skins = this.weapon.skins.filter(skin => skin.displayName !== "Standard Bucky" || skin.displayName !== "Random Favorite Skin");
+                    this.weapon.skins = this.weapon.skins.filter(skin => skin.displayName !== "Random Favorite Skin");
+                    this.weapon.skins = this.weapon.skins.filter(skin => skin.displayName !== "Standard "+ 
+                    this.weapon.displayName)
+                    this.weapon.skins = this.weapon.skins.filter(skin => skin.displayIcon !== null);
+                    console.log(this.weapon.displayName);
+                    console.log(this.weapon.skins);
+                    console.log(this.tetero);
                 })
                 .catch(error => {
                     console.error('Error fetching weapon details:', error);
@@ -50,7 +58,7 @@ createApp({
             const parts = category.split('::');
             return parts.length > 1 ? parts[1] : category;
         },
-
+        
 
     }
 }).mount('#appWeaponDetails');

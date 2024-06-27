@@ -11,7 +11,6 @@ createApp({
     created() {
         const urlParams = new URLSearchParams(window.location.search);
         const mapUuid = urlParams.get('value');
-        console.log('UUID:', mapUuid); // Verificación de UUID
         if (mapUuid) {
             this.fetchMapDetails(mapUuid);
         } else {
