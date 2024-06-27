@@ -516,11 +516,6 @@ footer a {
 #mapsBody {
     background-color: #1A242E;
 }
-
-#imgMap:hover {
-    transform: scale(1.2);
-}
-
 #imgMap:hover {
     transform: scale(1.2);
 }
