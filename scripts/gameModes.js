@@ -1,5 +1,4 @@
 let urlGameModes = window.location.href
-console.log(urlGameModes)
 
 //Url Games API
 const urlGamesModes = "https://valorant-api.com/v1/gamemodes"
@@ -75,12 +74,10 @@ const app = createApp({
     pullDataGamesModesEvents(url) {
       fetch(url).then(Response => Response.json()).then(data => {
         this.events = data.data
-        console.log(this.events);
       })
     },
     pullDataGameModesThemes(url){
       fetch(url).then(Response=>Response.json()).then(data => {
-        console.log(data);
         this.themes = data.data
         this.themes = this.themes.filter(theme => theme.displayIcon)
       })

@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
-<body id="bodyInfoHtml" class="bg_valorant">
+<body id="bodyInfoHtml">
+    <video class="video" src="https://assets.contentstack.io/v3/assets/blt2ac872571a60ee02/bltc3128a843ac2ef28/618d752b6407fe7f991e9915/background-video-d-01.mp4" autoplay="" muted="" loop="" playsinline=""  style="object-fit: cover; object-position: center center; height: 100%; width: 100%; transform-origin: center center;"></video> 
     <header>
         <nav class="navbar navbar-expand-sm bg-dark">
             <div class="container-fluid justify-content-between">
@@ -55,18 +56,24 @@
     </header>
     <main id="infoHtml">
         <div>
-            <div class="bg_valorant py-5 d-flex justify-content-evenly flex-wrap ">
+            <div class="py-5 d-flex justify-content-evenly flex-wrap ">
                 <div v-for="(section, index) in valorant" class="d-flex" style="width: 40vw;">
                     <div class="fatherInfo card mb-3 d-flex bg_black_transparent_1 my-3">
                         <div class="d-flex flex-wrap justify-content-center">
                             <img v-if="section.section == 'Agents'" v-for="agent in apiValorant"
-                                :src="agent.displayIcon" alt="" style="width: 4rem;" class="card-img-bottom m-2">
+                                :src="agent.displayIcon" alt="" style="width: 4rem; height:5rem;" class="card-img-bottom m-2">
                             <img v-if="section.section != 'Agents'" :src="section.image"
-                                class="card-img-bottom object-fit-contain m-4" alt="">
+                                class="card-img-bottom object-fit-contain m-4 p-2" :alt="section.section" style="width: 100%; height: 50vh;">
                         </div>
-                        <div class="card-body bg_black_transparent_8">
-                            <h5 class="card-title col_white text-center">{{section.section}}</h5>
-                            <p class="card-text col_white">{{section.content}}</p>
+                        <div class="card-body bg_black_transparent_8 d-flex flex-column justify-content-between">
+                            <div class="">
+                                <h5 class="card-title f_f_times col_white text-center m-3">{{section.section}}</h5>
+                                <p class="card-text col_white mx-5">{{section.content}}</p>
+                            </div>
+                            <div class="mx-5 my-2">
+                                <a :href="section.url == 'index.html'? '/'+section.url:'/pages/'+section.url" class="moreInfo f_f_times d-flex flex-column justify-content-center px-3 ms-5 mb-lg-5 ms-lg-0 fs-5" style="width: 10vw; height: 6vh;">Info</a>
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
