@@ -375,6 +375,10 @@ footer a {
     object-fit: cover;
     margin-bottom: 80vw;
 }
+.bgCategoriesWeapons{
+    background-image: url("https://i.pinimg.com/originals/7a/f3/6e/7af36e3f2da8ec425edac04747a8f3a3.png");
+
+}
 
 .custom-input-group {
     background: rgba(0, 0, 0, 0.7);
@@ -490,7 +494,7 @@ footer a {
 }
 
 .catLetter {
-    color: #000;
+    color: hsl(0, 0%, 100%);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
