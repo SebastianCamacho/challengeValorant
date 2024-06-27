@@ -21,6 +21,7 @@ const app = createApp({
                     this.weapons = data.data
                     this.weaponsBk = data.data
                     this.categories = Array.from(new Set(this.weapons.map((weapon) => this.extractCategoryName(weapon.category))))
+                    console.log(this.weaponsBk);
                 })
         },
         extractCategoryName(category) {
