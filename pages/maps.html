@@ -46,7 +46,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   >
-                  Informacion del Juego
+                  Game information
                 </a>
                 <ul class="dropdown-menu bg-dark">
                   <li><a class="dropdown-item" href="/pages/info.html">General information</a></li>
@@ -85,7 +85,7 @@
       </div>
       <div id="map" v-for="map in maps" class="map card col-6 col-md-3 p-3 m-3">
         <a :href="'detailsMaps.html?value='+ map.uuid" class="btn">
-          <img id="imgMap" :src="map.splash" class="card-img-top bg-dark" alt="map">
+          <img :src="map.splash" class="card-img-top bg-dark" alt="map">
         </a>
         <div class="card-body">
           <div class="card-footer bg-dark border-danger d-flex justify-content-between align-items-center" style="color: #ffffff; ">{{map.displayName}} 
@@ -130,7 +130,7 @@
                   <div v-if="favoriteMaps.length > 0" id="rowModalAgent" >
                     <div v-for="map in favoriteMaps" :key="map.uuid" class="map card col-6 col-md-3 p-3 m-3">
                       <a :href="'details.html?value='+map.uuid" class="btn">
-                        <img id="imgMap" :src="map.splash" class="card-img-top bg-dark" alt="map">
+                        <img :src="map.splash" class="card-img-top bg-dark" alt="map">
                       </a>
                       <div class="card-body">
                       <div class="card-footer bg-dark border-danger d-flex justify-content-between align-items-center" style="color: #ffffff; ">{{map.displayName}}
